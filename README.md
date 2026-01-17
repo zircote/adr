@@ -1,127 +1,246 @@
-# claude-plugin-template
+# ADR Plugin
 
-A ready-to-fork template for building a **Claude Code “plugin”** using:
+Complete lifecycle management for Architectural Decision Records (ADRs): create, update, supersede, search, audit compliance, and export.
 
-- **Claude Code project assets**: `.claude/commands`, `.claude/hooks`, `.claude/settings.json`
-- **MCP server** (Model Context Protocol) in **TypeScript** using stdio transport
-- **Team automation** in `.github/` (CI, templates, Copilot prompts/instructions)
+## Features
 
-## Quickstart
+- **Multi-Format Support** - MADR, Structured MADR, Nygard, Y-Statement, Alexandrian, Business Case, Tyree-Akerman
+- **Full Lifecycle Management** - Create, update, supersede, deprecate, archive
+- **Compliance Auditing** - Proactive checks of code against accepted ADRs
+- **Research Assistant** - Codebase analysis and web research for decision context
+- **Proactive ADR Detection** - Agent suggests capturing architectural discussions
+- **Git Integration** - Track changes, auto-commit, blame history
+- **Export Options** - HTML, JSON, PDF for documentation and sharing
+- **Configurable Workflow** - Custom statuses, numbering, templates
+- **Multi-Directory Support** - Project-level and module-level ADRs
+- **ADR Linking** - Supersedes, relates-to, amends relationships
 
-```bash
-npm install
-npm run typecheck
-npm run build
-```
+## Installation
 
-Run the MCP server locally:
-
-```bash
-npm run dev
-# or
-npm run start
-```
-
-## Fork checklist (rename it once)
-
-- Rename the package in `package.json` and the server name/version in `src/index.ts`.
-- Update the `.mcp.json` server key (`mcpServers.<name>`) to match.
-
-## Using with Claude Code (recommended)
-
-1) Build the server:
+### From GitHub
 
 ```bash
-npm run build
+claude plugin install zircote/adr
 ```
 
-2) Ensure `.mcp.json` exists at repo root (it does in this template):
+### Manual Installation
 
-```json
-{
-  "mcpServers": {
-    "claude-plugin-template": {
-      "type": "stdio",
-      "command": "node",
-      "args": ["dist/index.js"],
-      "env": {}
-    }
-  }
-}
-```
-
-3) Add/enable the MCP server in Claude Code.
-
-If you use the CLI, the flow is typically:
+Clone and add to Claude Code:
 
 ```bash
-claude mcp add claude-plugin-template -- node dist/index.js
-claude mcp list
+git clone https://github.com/zircote/adr.git
+claude --plugin-dir /path/to/adr
 ```
 
-Docs: https://code.claude.com/docs/en/mcp
+Or copy to your project's `.claude-plugin/` directory.
 
-## Using with Claude Desktop
-
-Claude Desktop MCP servers are typically configured in `claude_desktop_config.json`.
-Common location (macOS): `~/Library/Application Support/Claude/claude_desktop_config.json`.
-Docs: https://modelcontextprotocol.io/docs/develop/connect-local-servers
-
-## What’s included
-
-### 1) MCP server (`src/index.ts`)
-
-This template exposes:
-- Tool: `hello({ name })` → returns “Hello, <name>!”
-- Resource: `template://readme`
-
-Add more tools/resources in `src/index.ts`.
-
-### 2) Claude Code commands (`.claude/commands/*`)
-
-Examples included:
-- `/setup` – install + build sanity check
-- `/mcp [dev|build|start]` – run the MCP server
-- `/github:pr-review <owner/repo#PR>` – review a PR with `gh`
-
-Reminder: nested folders create namespaces, e.g. `.claude/commands/github/pr-review.md` ⇒ `/github:pr-review`.
-Docs: https://code.claude.com/docs/en/slash-commands
-
-### 3) Claude Code hooks (`.claude/settings.json` + `.claude/hooks/*`)
-
-This template includes a minimal **PreToolUse** Bash guard hook that blocks obviously-dangerous shell commands.
-Docs: https://code.claude.com/docs/en/hooks
-
-### 4) “Skills” (`skills/*`)
-
-Put durable team guidance here: conventions, how-to, runbooks.
-
-### 5) GitHub automation (`.github/*`)
-
-- CI (`.github/workflows/ci.yml`) runs `npm ci`, `typecheck`, `build`.
-- Issue templates + PR template.
-- Copilot instructions and reusable prompts.
-
-## Developing new features
-
-### Add a new MCP tool
-
-1) Add `server.tool(...)` in `src/index.ts`.
-2) Run:
+## Quick Start
 
 ```bash
-npm run typecheck
-npm run build
+# Initialize ADR configuration
+/adr:setup
+
+# Create your first ADR
+/adr:new "Use PostgreSQL for Primary Storage"
+
+# List all ADRs
+/adr:list
+
+# Search ADRs
+/adr:search "database"
 ```
 
-### Add a new slash command
+## Components
 
-Create: `.claude/commands/<name>.md`
+### Commands
 
-Use YAML frontmatter to set `description` and restrict tools via `allowed-tools`.
+| Command | Arguments | Description |
+|---------|-----------|-------------|
+| `/adr:new` | `<title>` | Create a new ADR with specified title |
+| `/adr:list` | `[--status=<status>] [--format=table\|json\|brief]` | List all ADRs with optional filtering |
+| `/adr:update` | `<id> [--status=<status>]` | Update an existing ADR (status, content) |
+| `/adr:supersede` | `<existing-id> <new-title>` | Create ADR that supersedes an existing one |
+| `/adr:search` | `<query> [--status=<status>] [--since=<date>]` | Search ADRs by content, status, or date |
+| `/adr:setup` | (interactive) | Interactive configuration wizard |
+| `/adr:export` | `[--format=html\|json\|pdf] [--output=<path>]` | Export ADRs to various formats |
 
-## Security checklist
+### Agents
 
-- Never commit tokens or API keys.
-- Prefer `env` entries in `.mcp.json` and local overrides in `.claude/settings.local.json`.
-- Keep hooks fail-open unless you’re confident about payload compatibility.
+| Agent | Description |
+|-------|-------------|
+| `adr-author` | Proactively detects architectural discussions and suggests creating ADRs |
+| `adr-compliance` | Audits code changes against accepted ADRs for violations |
+| `adr-researcher` | Gathers context from codebase and web for decision documentation |
+
+### Skills
+
+#### Core Skills
+- **adr-fundamentals** - ADR basics, lifecycle management, best practices
+- **adr-decision-drivers** - Identifying and documenting decision drivers
+- **adr-quality** - Review criteria, completeness checks, writing quality
+
+#### Format Skills
+- **adr-format-madr** - MADR 4.0.0 format (default)
+- **adr-format-structured-madr** - MADR with frontmatter, comprehensive options, and audit sections
+- **adr-format-nygard** - Classic Nygard format
+- **adr-format-y-statement** - Concise Y-Statement format
+- **adr-format-alexandrian** - Pattern-based Alexandrian format
+- **adr-format-business-case** - MBA-style with SWOT and ROI
+- **adr-format-tyree-akerman** - Enterprise-grade comprehensive format
+
+#### Specialized Skills
+- **adr-compliance** - Compliance checking patterns and audit workflows
+- **adr-integration** - CI/CD integration, documentation sites, tooling
+
+## Configuration
+
+Create `.claude/adr.local.md` in your project root (use `/adr:setup` for guided setup).
+
+See `templates/adr.local.md.example` for a complete configuration template.
+
+```yaml
+---
+# ADR directories
+adr_paths:
+  - docs/adr/
+
+# Default template format
+default_format: madr
+madr_variant: full
+
+# Numbering pattern
+numbering:
+  pattern: "4digit"
+  start_from: 1
+
+# Status workflow
+statuses:
+  workflow:
+    - proposed
+    - accepted
+    - deprecated
+    - superseded
+  allow_rejected: true
+
+# Git integration
+git:
+  enabled: true
+  auto_commit: false
+
+# Compliance checking
+compliance:
+  enabled: true
+  check_all_accepted: true
+  file_patterns:
+    - "**/*.ts"
+    - "**/*.py"
+---
+
+# Project ADR Context
+
+Add project-specific notes here...
+```
+
+## ADR Status Workflow
+
+```
+proposed → accepted → [deprecated] → superseded
+              ↓
+          rejected
+```
+
+| Status | Description |
+|--------|-------------|
+| **proposed** | Decision under consideration |
+| **accepted** | Approved and active |
+| **rejected** | Considered but not adopted |
+| **deprecated** | No longer recommended |
+| **superseded** | Replaced by another ADR |
+
+## Template Formats
+
+### MADR (Default)
+Markdown Architectural Decision Records - lean, option-focused format with pros/cons analysis.
+
+### Structured MADR
+Extended MADR with YAML frontmatter, comprehensive option analysis with risk assessments, and required audit sections. Best for regulated environments.
+
+### Nygard
+Classic 5-section format: Title, Status, Context, Decision, Consequences.
+
+### Y-Statement
+Single-sentence format capturing context, concern, option, quality, and trade-off.
+
+### Alexandrian
+Pattern-oriented format emphasizing forces and resulting context.
+
+### Business Case
+Executive-focused with SWOT analysis, cost-benefit, and ROI assessment.
+
+### Tyree-Akerman
+Comprehensive enterprise format with full traceability to requirements and principles.
+
+## File Structure
+
+```
+adr/
+├── .claude-plugin/
+│   └── plugin.json
+├── agents/
+│   ├── adr-author.md
+│   ├── adr-compliance.md
+│   └── adr-researcher.md
+├── commands/
+│   ├── adr-export.md
+│   ├── adr-list.md
+│   ├── adr-new.md
+│   ├── adr-search.md
+│   ├── adr-setup.md
+│   ├── adr-supersede.md
+│   └── adr-update.md
+├── schemas/
+│   └── adr-export.schema.json
+├── skills/
+│   ├── adr-compliance/
+│   ├── adr-decision-drivers/
+│   ├── adr-format-alexandrian/
+│   ├── adr-format-business-case/
+│   ├── adr-format-madr/
+│   ├── adr-format-nygard/
+│   ├── adr-format-structured-madr/
+│   ├── adr-format-tyree-akerman/
+│   ├── adr-format-y-statement/
+│   ├── adr-fundamentals/
+│   ├── adr-integration/
+│   └── adr-quality/
+├── templates/
+│   ├── alexandrian/
+│   ├── business-case/
+│   ├── madr/
+│   ├── nygard/
+│   ├── structured-madr/
+│   ├── tyree-akerman/
+│   ├── y-statement/
+│   ├── adr.local.md.example
+│   └── README-index.md
+├── CHANGELOG.md
+├── LICENSE
+└── README.md
+```
+
+## References
+
+- [MADR](https://adr.github.io/madr/) - Markdown Architectural Decision Records
+- [ADR Templates](https://adr.github.io/adr-templates/) - Various ADR formats
+- [Michael Nygard's ADRs](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) - Original ADR concept
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## License
+
+MIT

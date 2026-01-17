@@ -1,20 +1,44 @@
-# Copilot instructions
+# Copilot Instructions
 
-You are working in a template repository for Claude Code + MCP servers.
+You are working in the ADR plugin repository for Claude Code.
 
-## Priorities
+## Project Overview
 
-1. Keep changes small and reviewable.
-2. Prefer TypeScript and the official `@modelcontextprotocol/sdk`.
-3. Update documentation when you change developer-facing behavior.
+This is a Claude Code plugin for complete lifecycle management of Architectural Decision Records (ADRs).
 
-## Commands
+## Key Components
 
-- Build: `npm run build`
-- Typecheck: `npm run typecheck`
-- Run MCP server (dev): `npm run dev`
+- **Skills**: 12 skills covering fundamentals, formats, compliance, and integration
+- **Commands**: 7 commands for ADR lifecycle management
+- **Agents**: 3 agents for authoring, compliance, and research
+- **Templates**: 7 ADR format templates
 
-## Security
+## Plugin Structure
 
-- Never hardcode tokens.
-- Prefer env vars in `.mcp.json` / Claude Desktop config.
+```
+.claude-plugin/plugin.json  # Plugin manifest
+skills/                     # 12 skill directories with SKILL.md and references
+commands/                   # 7 ADR commands
+agents/                     # 3 ADR agents
+templates/                  # ADR format templates
+schemas/                    # Export schemas
+```
+
+## Development Guidelines
+
+1. Follow Claude Code plugin standards
+2. Keep changes focused and reviewable
+3. Update CHANGELOG.md for user-facing changes
+4. Test commands and agent triggering locally
+
+## Testing
+
+```bash
+claude --plugin-dir .
+```
+
+Then test:
+- `/adr:new` command
+- `/adr:list` command
+- `/adr:setup` command
+- Agent triggering for architectural discussions
