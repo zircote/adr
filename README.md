@@ -1,5 +1,10 @@
 # ADR Plugin
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Claude Code Plugin](https://img.shields.io/badge/Claude_Code-Plugin-blueviolet)](https://github.com/anthropics/claude-code)
+[![CI](https://github.com/zircote/adr/actions/workflows/ci.yml/badge.svg)](https://github.com/zircote/adr/actions/workflows/ci.yml)
+[![Version](https://img.shields.io/badge/version-0.2.0-green.svg)](https://github.com/zircote/adr/releases)
+
 Complete lifecycle management for Architectural Decision Records (ADRs): create, update, supersede, search, audit compliance, and export.
 
 ## Features
