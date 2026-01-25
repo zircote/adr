@@ -9,6 +9,7 @@ allowed-tools:
   - Glob
   - Grep
   - AskUserQuestion
+  - Skill
 ---
 
 # Supersede ADR
@@ -132,3 +133,17 @@ Report:
 - If existing ADR not found, list available ADRs
 - If old ADR is still "proposed", suggest rejection instead
 - If bidirectional update fails, report and suggest manual fix
+
+## Post-Supersession: Capture to Mnemonic
+
+After superseding an ADR, capture both sides of the relationship:
+
+```bash
+# Capture the supersession event
+/mnemonic:capture decisions "ADR-{OLD_NUMBER} superseded by ADR-{NEW_NUMBER}: {NEW_TITLE}"
+```
+
+Include:
+- Original ADR context
+- Why it was superseded
+- Link to both ADRs
