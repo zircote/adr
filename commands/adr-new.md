@@ -14,17 +14,17 @@ allowed-tools:
   - Skill
 ---
 
-## Memory
+<!-- BEGIN MNEMONIC PROTOCOL -->
+## Memory Operations
 
+BEFORE starting:
+```bash
+rg -i "{title}" ~/.claude/mnemonic/ --glob "*.memory.md" -l | head -5
 ```
-┌────────────────────────────────────────────────────────┐
-│ Search first:                                          │
-│ rg -i "{title}" ~/.claude/mnemonic/ --glob "*.memory.md"│
-│                                                        │
-│ Capture after:                                         │
-│ /mnemonic:capture decisions "ADR-{number}: {title}"    │
-└────────────────────────────────────────────────────────┘
-```
+If results exist, READ and apply that context.
+
+AFTER completing: report for capture to `_semantic/decisions` with title "ADR-{number}: {title}"
+<!-- END MNEMONIC PROTOCOL -->
 
 # Create New ADR
 

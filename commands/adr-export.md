@@ -9,14 +9,11 @@ allowed-tools:
   - Bash
 ---
 
-## Memory
+<!-- BEGIN MNEMONIC PROTOCOL -->
+## Memory Operations
 
-```
-┌────────────────────────────────────────────────────────┐
-│ After completing:                                      │
-│ /mnemonic:capture knowledge "ADR export: {format}"     │
-└────────────────────────────────────────────────────────┘
-```
+AFTER completing: report for capture to `_semantic/knowledge` with title "ADR export: {format}"
+<!-- END MNEMONIC PROTOCOL -->
 
 # Export ADRs
 

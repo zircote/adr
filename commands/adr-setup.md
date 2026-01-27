@@ -10,14 +10,11 @@ allowed-tools:
   - AskUserQuestion
 ---
 
-## Memory
+<!-- BEGIN MNEMONIC PROTOCOL -->
+## Memory Operations
 
-```
-┌────────────────────────────────────────────────────────┐
-│ After completing:                                      │
-│ /mnemonic:capture decisions "ADR setup: {project}"     │
-└────────────────────────────────────────────────────────┘
-```
+AFTER completing: report for capture to `_semantic/decisions` with title "ADR setup: {project}"
+<!-- END MNEMONIC PROTOCOL -->
 
 # ADR Setup
 
