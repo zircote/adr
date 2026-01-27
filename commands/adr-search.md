@@ -1,12 +1,22 @@
 ---
-name: adr-search
-description: Search ADRs by content, status, tags, or date
-argument-hint: "<query> [--status=<status>] [--since=<date>]"
 allowed-tools:
-  - Read
-  - Glob
-  - Grep
+- Read
+- Glob
+- Grep
+- Bash
+- Write
+argument-hint: <query> [--status=<status>] [--since=<date>]
+description: Search ADRs by content, status, tags, or date
+name: adr-search
 ---
+<!-- BEGIN MNEMONIC PROTOCOL -->
+## Memory
+
+Search first: `/mnemonic:search {relevant_keywords}`
+Capture after: `/mnemonic:capture {namespace} "{title}"`
+
+Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
+<!-- END MNEMONIC PROTOCOL -->
 
 # Search ADRs
 

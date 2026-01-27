@@ -1,8 +1,25 @@
 ---
+allowed-tools:
+- Bash
+- Glob
+- Grep
+- Read
+- Write
+description: This skill should be used when the user asks about "Y-statement format",
+  "Y-statement ADR", "concise ADR", "one-sentence ADR", "Olaf Zimmermann ADR", or
+  needs guidance on creating ADRs using the Y-Statement format for concise decision
+  documentation.
 name: Y-Statement ADR Format
-description: This skill should be used when the user asks about "Y-statement format", "Y-statement ADR", "concise ADR", "one-sentence ADR", "Olaf Zimmermann ADR", or needs guidance on creating ADRs using the Y-Statement format for concise decision documentation.
 version: 1.0.0
 ---
+<!-- BEGIN MNEMONIC PROTOCOL -->
+## Memory
+
+Search first: `/mnemonic:search {relevant_keywords}`
+Capture after: `/mnemonic:capture {namespace} "{title}"`
+
+Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
+<!-- END MNEMONIC PROTOCOL -->
 
 # Y-Statement ADR Format
 

@@ -1,8 +1,24 @@
 ---
+allowed-tools:
+- Bash
+- Glob
+- Grep
+- Read
+- Write
+description: This skill should be used when the user asks about "Alexandrian format",
+  "Alexandrian ADR", "pattern-based ADR", "forces-based ADR", "Christopher Alexander
+  ADR", or needs guidance on creating ADRs using the Alexandrian pattern format.
 name: Alexandrian ADR Format
-description: This skill should be used when the user asks about "Alexandrian format", "Alexandrian ADR", "pattern-based ADR", "forces-based ADR", "Christopher Alexander ADR", or needs guidance on creating ADRs using the Alexandrian pattern format.
 version: 1.0.0
 ---
+<!-- BEGIN MNEMONIC PROTOCOL -->
+## Memory
+
+Search first: `/mnemonic:search {relevant_keywords}`
+Capture after: `/mnemonic:capture {namespace} "{title}"`
+
+Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
+<!-- END MNEMONIC PROTOCOL -->
 
 # Alexandrian ADR Format
 

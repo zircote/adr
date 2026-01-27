@@ -1,8 +1,25 @@
 ---
+allowed-tools:
+- Bash
+- Glob
+- Grep
+- Read
+- Write
+description: This skill should be used when the user asks about "ADR compliance",
+  "architecture compliance", "ADR audit", "enforce ADRs", "check code against ADRs",
+  "ADR violations", or needs guidance on auditing code compliance with accepted architectural
+  decision records.
 name: ADR Compliance
-description: This skill should be used when the user asks about "ADR compliance", "architecture compliance", "ADR audit", "enforce ADRs", "check code against ADRs", "ADR violations", or needs guidance on auditing code compliance with accepted architectural decision records.
 version: 1.0.0
 ---
+<!-- BEGIN MNEMONIC PROTOCOL -->
+## Memory
+
+Search first: `/mnemonic:search {relevant_keywords}`
+Capture after: `/mnemonic:capture {namespace} "{title}"`
+
+Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
+<!-- END MNEMONIC PROTOCOL -->
 
 # ADR Compliance
 

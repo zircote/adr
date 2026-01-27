@@ -1,27 +1,26 @@
 ---
-name: adr-supersede
-description: Create a new ADR that supersedes an existing one
-argument-hint: "<existing-adr-id> <new-title>"
 allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Glob
-  - Grep
-  - AskUserQuestion
-  - Skill
+- Read
+- Write
+- Edit
+- Glob
+- Grep
+- AskUserQuestion
+- Skill
+- Bash
+argument-hint: <existing-adr-id> <new-title>
+description: Create a new ADR that supersedes an existing one
+name: adr-supersede
 ---
-
 <!-- BEGIN MNEMONIC PROTOCOL -->
-## Memory Operations
 
-BEFORE starting:
-```bash
-rg -i "{topic}" ~/.claude/mnemonic/ --glob "*.memory.md" -l | head -5
-```
-If results exist, READ and apply that context.
+## Memory
 
-AFTER completing: report for capture to `_semantic/decisions` with title "{title}"
+Search first: `/mnemonic:search {relevant_keywords}`
+Capture after: `/mnemonic:capture {namespace} "{title}"`
+
+Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
+
 <!-- END MNEMONIC PROTOCOL -->
 
 # Supersede ADR

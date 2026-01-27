@@ -1,8 +1,25 @@
 ---
+allowed-tools:
+- Bash
+- Glob
+- Grep
+- Read
+- Write
+description: This skill should be used when the user asks about "structured MADR",
+  "structured-madr", "frontmatter ADR", "comprehensive ADR", "auditable ADR", or needs
+  guidance on creating ADRs using the Structured MADR format with YAML frontmatter
+  and audit sections.
 name: Structured MADR Format
-description: This skill should be used when the user asks about "structured MADR", "structured-madr", "frontmatter ADR", "comprehensive ADR", "auditable ADR", or needs guidance on creating ADRs using the Structured MADR format with YAML frontmatter and audit sections.
 version: 1.0.0
 ---
+<!-- BEGIN MNEMONIC PROTOCOL -->
+## Memory
+
+Search first: `/mnemonic:search {relevant_keywords}`
+Capture after: `/mnemonic:capture {namespace} "{title}"`
+
+Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
+<!-- END MNEMONIC PROTOCOL -->
 
 # Structured MADR Format
 

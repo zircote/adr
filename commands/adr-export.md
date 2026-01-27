@@ -1,18 +1,23 @@
 ---
-name: adr-export
-description: Export ADRs to HTML, JSON, or PDF format
-argument-hint: "[--format=html|json|pdf] [--output=<path>]"
 allowed-tools:
-  - Read
-  - Write
-  - Glob
-  - Bash
+- Read
+- Write
+- Glob
+- Bash
+- Grep
+argument-hint: '[--format=html|json|pdf] [--output=<path>]'
+description: Export ADRs to HTML, JSON, or PDF format
+name: adr-export
 ---
-
 <!-- BEGIN MNEMONIC PROTOCOL -->
-## Memory Operations
 
-AFTER completing: report for capture to `_semantic/knowledge` with title "ADR export: {format}"
+## Memory
+
+Search first: `/mnemonic:search {relevant_keywords}`
+Capture after: `/mnemonic:capture {namespace} "{title}"`
+
+Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
+
 <!-- END MNEMONIC PROTOCOL -->
 
 # Export ADRs

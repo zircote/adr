@@ -1,19 +1,24 @@
 ---
-name: adr-setup
-description: Interactive setup for ADR configuration in this project
-argument-hint: ""
 allowed-tools:
-  - Read
-  - Write
-  - Glob
-  - Bash
-  - AskUserQuestion
+- Read
+- Write
+- Glob
+- Bash
+- AskUserQuestion
+- Grep
+argument-hint: ''
+description: Interactive setup for ADR configuration in this project
+name: adr-setup
 ---
-
 <!-- BEGIN MNEMONIC PROTOCOL -->
-## Memory Operations
 
-AFTER completing: report for capture to `_semantic/decisions` with title "ADR setup: {project}"
+## Memory
+
+Search first: `/mnemonic:search {relevant_keywords}`
+Capture after: `/mnemonic:capture {namespace} "{title}"`
+
+Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
+
 <!-- END MNEMONIC PROTOCOL -->
 
 # ADR Setup

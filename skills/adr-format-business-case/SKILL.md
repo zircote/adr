@@ -1,8 +1,25 @@
 ---
+allowed-tools:
+- Bash
+- Glob
+- Grep
+- Read
+- Write
+description: This skill should be used when the user asks about "business case ADR",
+  "MBA-style ADR", "cost-benefit ADR", "SWOT ADR", "executive ADR", "ROI ADR", or
+  needs guidance on creating ADRs using the business case format for executive and
+  financial analysis.
 name: Business Case ADR Format
-description: This skill should be used when the user asks about "business case ADR", "MBA-style ADR", "cost-benefit ADR", "SWOT ADR", "executive ADR", "ROI ADR", or needs guidance on creating ADRs using the business case format for executive and financial analysis.
 version: 1.0.0
 ---
+<!-- BEGIN MNEMONIC PROTOCOL -->
+## Memory
+
+Search first: `/mnemonic:search {relevant_keywords}`
+Capture after: `/mnemonic:capture {namespace} "{title}"`
+
+Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
+<!-- END MNEMONIC PROTOCOL -->
 
 # Business Case ADR Format
 

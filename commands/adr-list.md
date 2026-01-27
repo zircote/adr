@@ -1,12 +1,22 @@
 ---
-name: adr-list
-description: List all ADRs with optional status filtering
-argument-hint: "[--status=accepted|proposed|deprecated|superseded]"
 allowed-tools:
-  - Read
-  - Glob
-  - Grep
+- Read
+- Glob
+- Grep
+- Bash
+- Write
+argument-hint: '[--status=accepted|proposed|deprecated|superseded]'
+description: List all ADRs with optional status filtering
+name: adr-list
 ---
+<!-- BEGIN MNEMONIC PROTOCOL -->
+## Memory
+
+Search first: `/mnemonic:search {relevant_keywords}`
+Capture after: `/mnemonic:capture {namespace} "{title}"`
+
+Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
+<!-- END MNEMONIC PROTOCOL -->
 
 # List ADRs
 

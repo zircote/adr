@@ -1,8 +1,24 @@
 ---
+allowed-tools:
+- Bash
+- Glob
+- Grep
+- Read
+- Write
+description: This skill should be used when the user asks about "Nygard format", "Nygard
+  ADR", "classic ADR format", "simple ADR template", "Michael Nygard ADR", or needs
+  guidance on creating ADRs using the original Nygard format.
 name: Nygard ADR Format
-description: This skill should be used when the user asks about "Nygard format", "Nygard ADR", "classic ADR format", "simple ADR template", "Michael Nygard ADR", or needs guidance on creating ADRs using the original Nygard format.
 version: 1.0.0
 ---
+<!-- BEGIN MNEMONIC PROTOCOL -->
+## Memory
+
+Search first: `/mnemonic:search {relevant_keywords}`
+Capture after: `/mnemonic:capture {namespace} "{title}"`
+
+Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
+<!-- END MNEMONIC PROTOCOL -->
 
 # Nygard ADR Format
 

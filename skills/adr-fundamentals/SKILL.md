@@ -1,8 +1,25 @@
 ---
+allowed-tools:
+- Bash
+- Glob
+- Grep
+- Read
+- Write
+description: This skill should be used when the user asks "what is an ADR", "when
+  should I create an ADR", "ADR best practices", "architecture decision records",
+  "ADR lifecycle", "how to document architecture decisions", or needs guidance on
+  ADR fundamentals, when to create ADRs, or ADR lifecycle management.
 name: ADR Fundamentals
-description: This skill should be used when the user asks "what is an ADR", "when should I create an ADR", "ADR best practices", "architecture decision records", "ADR lifecycle", "how to document architecture decisions", or needs guidance on ADR fundamentals, when to create ADRs, or ADR lifecycle management.
 version: 1.0.0
 ---
+<!-- BEGIN MNEMONIC PROTOCOL -->
+## Memory
+
+Search first: `/mnemonic:search {relevant_keywords}`
+Capture after: `/mnemonic:capture {namespace} "{title}"`
+
+Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
+<!-- END MNEMONIC PROTOCOL -->
 
 # ADR Fundamentals
 
