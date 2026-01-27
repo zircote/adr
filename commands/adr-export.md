@@ -9,6 +9,10 @@ allowed-tools:
   - Bash
 ---
 
+## Memory
+
+After completing: `/mnemonic:capture knowledge "ADR export: {format}"`
+
 # Export ADRs
 
 Export Architectural Decision Records to HTML, JSON, or PDF format for sharing, documentation sites, or archival.

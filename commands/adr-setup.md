@@ -10,6 +10,10 @@ allowed-tools:
   - AskUserQuestion
 ---
 
+## Memory
+
+After completing: `/mnemonic:capture decisions "ADR setup: {project}"`
+
 # ADR Setup
 
 Interactive configuration wizard for setting up ADR management in the current project.
