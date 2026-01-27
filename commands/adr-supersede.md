@@ -12,6 +12,18 @@ allowed-tools:
   - Skill
 ---
 
+## Memory
+
+```
+┌────────────────────────────────────────────────────────┐
+│ Search first:                                          │
+│ rg -i "{topic}" ~/.claude/mnemonic/ --glob "*.memory.md"│
+│                                                        │
+│ Capture after:                                         │
+│ /mnemonic:capture decisions "{title}"                  │
+└────────────────────────────────────────────────────────┘
+```
+
 # Supersede ADR
 
 Create a new ADR that supersedes an existing one, with proper bidirectional linking.
@@ -133,17 +145,3 @@ Report:
 - If existing ADR not found, list available ADRs
 - If old ADR is still "proposed", suggest rejection instead
 - If bidirectional update fails, report and suggest manual fix
-
-## Post-Supersession: Capture to Mnemonic
-
-After superseding an ADR, capture both sides of the relationship:
-
-```bash
-# Capture the supersession event
-/mnemonic:capture decisions "ADR-{OLD_NUMBER} superseded by ADR-{NEW_NUMBER}: {NEW_TITLE}"
-```
-
-Include:
-- Original ADR context
-- Why it was superseded
-- Link to both ADRs

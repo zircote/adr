@@ -12,7 +12,12 @@ allowed-tools:
 
 ## Memory
 
-After completing: `/mnemonic:capture decisions "ADR setup: {project}"`
+```
+┌────────────────────────────────────────────────────────┐
+│ After completing:                                      │
+│ /mnemonic:capture decisions "ADR setup: {project}"     │
+└────────────────────────────────────────────────────────┘
+```
 
 # ADR Setup
 

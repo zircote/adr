@@ -11,7 +11,12 @@ allowed-tools:
 
 ## Memory
 
-After completing: `/mnemonic:capture knowledge "ADR export: {format}"`
+```
+┌────────────────────────────────────────────────────────┐
+│ After completing:                                      │
+│ /mnemonic:capture knowledge "ADR export: {format}"     │
+└────────────────────────────────────────────────────────┘
+```
 
 # Export ADRs
 

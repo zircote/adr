@@ -12,6 +12,18 @@ allowed-tools:
   - Skill
 ---
 
+## Memory
+
+```
+┌────────────────────────────────────────────────────────┐
+│ Search first:                                          │
+│ rg -i "{topic}" ~/.claude/mnemonic/ --glob "*.memory.md"│
+│                                                        │
+│ Capture after:                                         │
+│ /mnemonic:capture decisions "{title}"                  │
+└────────────────────────────────────────────────────────┘
+```
+
 # Update ADR
 
 Update an existing Architectural Decision Record's status, content, or metadata.
@@ -103,19 +115,3 @@ Before updating:
 - Verify ADR exists
 - Validate status transition is allowed
 - Check for missing required fields
-
-## Post-Update: Capture to Mnemonic
-
-When ADR status changes to "accepted" or "superseded", update mnemonic:
-
-For **accepted** ADRs:
-```bash
-/mnemonic:capture decisions "ADR-{NUMBER} Accepted: {TITLE}"
-```
-
-For **superseded** ADRs:
-```bash
-/mnemonic:capture decisions "ADR-{NUMBER} Superseded by ADR-{NEW_NUMBER}"
-```
-
-This maintains a memory trail of architectural evolution.

@@ -14,6 +14,18 @@ allowed-tools:
   - Skill
 ---
 
+## Memory
+
+```
+┌────────────────────────────────────────────────────────┐
+│ Search first:                                          │
+│ rg -i "{title}" ~/.claude/mnemonic/ --glob "*.memory.md"│
+│                                                        │
+│ Capture after:                                         │
+│ /mnemonic:capture decisions "ADR-{number}: {title}"    │
+└────────────────────────────────────────────────────────┘
+```
+
 # Create New ADR
 
 Create a new Architectural Decision Record with the specified title.
@@ -109,22 +121,3 @@ After creation, report:
 - If configuration is missing, use defaults
 - If title is empty, prompt for it
 
-## Post-Creation: Capture to Mnemonic
-
-After creating the ADR, capture the decision to mnemonic memory:
-
-```bash
-# Capture the new ADR as a decision memory
-/mnemonic:capture decisions "ADR-{NUMBER}: {TITLE}"
-```
-
-Include in the memory:
-- Decision title and number
-- Status (proposed)
-- Key context and drivers
-- Link to the ADR file
-
-This enables future recall when:
-- Checking for related prior decisions
-- Researching options for new ADRs
-- Reviewing architectural patterns
