@@ -1,16 +1,9 @@
 ---
-allowed-tools:
-- Bash
-- Glob
-- Grep
-- Read
-- Write
+name: adr-fundamentals
 description: This skill should be used when the user asks "what is an ADR", "when
   should I create an ADR", "ADR best practices", "architecture decision records",
   "ADR lifecycle", "how to document architecture decisions", or needs guidance on
   ADR fundamentals, when to create ADRs, or ADR lifecycle management.
-name: ADR Fundamentals
-version: 1.0.0
 ---
 <!-- BEGIN MNEMONIC PROTOCOL -->
 ## Memory

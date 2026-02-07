@@ -1,15 +1,8 @@
 ---
-allowed-tools:
-- Bash
-- Glob
-- Grep
-- Read
-- Write
+name: adr-format-nygard
 description: This skill should be used when the user asks about "Nygard format", "Nygard
   ADR", "classic ADR format", "simple ADR template", "Michael Nygard ADR", or needs
   guidance on creating ADRs using the original Nygard format.
-name: Nygard ADR Format
-version: 1.0.0
 ---
 <!-- BEGIN MNEMONIC PROTOCOL -->
 ## Memory

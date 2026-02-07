@@ -1,16 +1,9 @@
 ---
-allowed-tools:
-- Bash
-- Glob
-- Grep
-- Read
-- Write
+name: adr-format-madr
 description: This skill should be used when the user asks about "MADR format", "MADR
   template", "Markdown Architectural Decision Records", "MADR 4.0", "MADR sections",
   or needs guidance on creating ADRs using the MADR (Markdown Architectural Decision
   Records) format.
-name: MADR Format
-version: 1.0.0
 ---
 <!-- BEGIN MNEMONIC PROTOCOL -->
 ## Memory

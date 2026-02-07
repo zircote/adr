@@ -1,16 +1,9 @@
 ---
-allowed-tools:
-- Bash
-- Glob
-- Grep
-- Read
-- Write
+name: adr-quality
 description: This skill should be used when the user asks about "ADR quality", "review
   ADR", "ADR checklist", "improve ADR", "ADR validation", "good ADR examples", or
   needs guidance on evaluating, improving, and maintaining high-quality architectural
   decision records.
-name: ADR Quality
-version: 1.0.0
 ---
 <!-- BEGIN MNEMONIC PROTOCOL -->
 ## Memory

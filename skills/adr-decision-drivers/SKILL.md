@@ -1,16 +1,9 @@
 ---
-allowed-tools:
-- Bash
-- Glob
-- Grep
-- Read
-- Write
+name: adr-decision-drivers
 description: This skill should be used when the user asks about "decision drivers",
   "architectural forces", "quality attributes", "how to identify trade-offs", "non-functional
   requirements for ADRs", or needs help identifying, documenting, and weighing the
   forces that influence architectural decisions.
-name: ADR Decision Drivers
-version: 1.0.0
 ---
 <!-- BEGIN MNEMONIC PROTOCOL -->
 ## Memory

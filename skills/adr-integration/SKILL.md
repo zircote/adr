@@ -1,16 +1,9 @@
 ---
-allowed-tools:
-- Bash
-- Glob
-- Grep
-- Read
-- Write
+name: adr-integration
 description: This skill should be used when the user asks about "ADR integration",
   "ADR CI/CD", "ADR tooling", "ADR automation", "export ADRs", "ADR documentation
   site", or needs guidance on integrating ADRs with CI/CD, documentation sites, and
   other tools.
-name: ADR Integration
-version: 1.0.0
 ---
 <!-- BEGIN MNEMONIC PROTOCOL -->
 ## Memory

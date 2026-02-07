@@ -1,16 +1,9 @@
 ---
-allowed-tools:
-- Bash
-- Glob
-- Grep
-- Read
-- Write
+name: adr-compliance
 description: This skill should be used when the user asks about "ADR compliance",
   "architecture compliance", "ADR audit", "enforce ADRs", "check code against ADRs",
   "ADR violations", or needs guidance on auditing code compliance with accepted architectural
   decision records.
-name: ADR Compliance
-version: 1.0.0
 ---
 <!-- BEGIN MNEMONIC PROTOCOL -->
 ## Memory

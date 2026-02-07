@@ -1,16 +1,9 @@
 ---
-allowed-tools:
-- Bash
-- Glob
-- Grep
-- Read
-- Write
+name: adr-format-business-case
 description: This skill should be used when the user asks about "business case ADR",
   "MBA-style ADR", "cost-benefit ADR", "SWOT ADR", "executive ADR", "ROI ADR", or
   needs guidance on creating ADRs using the business case format for executive and
   financial analysis.
-name: Business Case ADR Format
-version: 1.0.0
 ---
 <!-- BEGIN MNEMONIC PROTOCOL -->
 ## Memory

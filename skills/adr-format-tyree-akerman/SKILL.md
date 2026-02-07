@@ -1,16 +1,9 @@
 ---
-allowed-tools:
-- Bash
-- Glob
-- Grep
-- Read
-- Write
+name: adr-format-tyree-akerman
 description: This skill should be used when the user asks about "Tyree-Akerman format",
   "sophisticated ADR", "comprehensive ADR", "enterprise ADR", "formal ADR template",
   or needs guidance on creating ADRs using the Tyree-Akerman format for enterprise
   and formal documentation.
-name: Tyree-Akerman ADR Format
-version: 1.0.0
 ---
 <!-- BEGIN MNEMONIC PROTOCOL -->
 ## Memory

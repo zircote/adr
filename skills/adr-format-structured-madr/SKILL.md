@@ -1,16 +1,9 @@
 ---
-allowed-tools:
-- Bash
-- Glob
-- Grep
-- Read
-- Write
+name: adr-format-structured-madr
 description: This skill should be used when the user asks about "structured MADR",
   "structured-madr", "frontmatter ADR", "comprehensive ADR", "auditable ADR", or needs
   guidance on creating ADRs using the Structured MADR format with YAML frontmatter
   and audit sections.
-name: Structured MADR Format
-version: 1.0.0
 ---
 <!-- BEGIN MNEMONIC PROTOCOL -->
 ## Memory

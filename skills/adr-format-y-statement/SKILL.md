@@ -1,16 +1,9 @@
 ---
-allowed-tools:
-- Bash
-- Glob
-- Grep
-- Read
-- Write
+name: adr-format-y-statement
 description: This skill should be used when the user asks about "Y-statement format",
   "Y-statement ADR", "concise ADR", "one-sentence ADR", "Olaf Zimmermann ADR", or
   needs guidance on creating ADRs using the Y-Statement format for concise decision
   documentation.
-name: Y-Statement ADR Format
-version: 1.0.0
 ---
 <!-- BEGIN MNEMONIC PROTOCOL -->
 ## Memory

@@ -1,15 +1,8 @@
 ---
-allowed-tools:
-- Bash
-- Glob
-- Grep
-- Read
-- Write
+name: adr-format-alexandrian
 description: This skill should be used when the user asks about "Alexandrian format",
   "Alexandrian ADR", "pattern-based ADR", "forces-based ADR", "Christopher Alexander
   ADR", or needs guidance on creating ADRs using the Alexandrian pattern format.
-name: Alexandrian ADR Format
-version: 1.0.0
 ---
 <!-- BEGIN MNEMONIC PROTOCOL -->
 ## Memory
