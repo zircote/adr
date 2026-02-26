@@ -1,0 +1,32 @@
+# ADR Plugin — Claude Code Plugin
+
+> Complete lifecycle management for Architectural Decision Records
+
+ADR Plugin is a Claude Code plugin that provides full lifecycle management for
+Architectural Decision Records (ADRs). It includes commands for creating, listing,
+updating, superseding, searching, and exporting ADRs. Three specialized agents
+(Author, Compliance, Researcher) assist with ADR workflows. Twelve skills cover
+ADR fundamentals, formats (MADR, Nygard, Y-Statement, Alexandrian, Business Case,
+Tyree-Akerman), quality review, compliance auditing, decision drivers, and
+CI/CD integration.
+
+## Documentation
+- Site: https://zircote.com/adr
+- GitHub: https://github.com/zircote/adr
+
+## Commands
+- /adr:setup — Interactive ADR configuration setup
+- /adr:new — Create a new ADR
+- /adr:list — List all ADRs with optional status filtering
+- /adr:update — Update an existing ADR
+- /adr:supersede — Create a new ADR that supersedes an existing one
+- /adr:search — Search ADRs by content, status, tags, or date
+- /adr:export — Export ADRs to HTML, JSON, or PDF format
+
+## Agents
+- ADR Author — Detects architectural discussions and suggests capturing decisions as ADRs
+- ADR Compliance — Audits code changes against accepted ADRs
+- ADR Researcher — Researches context, options, and best practices for architectural decisions
+
+## Installation
+claude install gh:zircote/adr

@@ -1,0 +1,110 @@
+{
+  "outputDir": "src/content/docs",
+  "pages": [
+    {
+      "source": "agents/adr-author.md",
+      "output": "agents/adr-author.mdx",
+      "title": "ADR Author Agent"
+    },
+    {
+      "source": "agents/adr-compliance.md",
+      "output": "agents/adr-compliance.mdx",
+      "title": "ADR Compliance Agent"
+    },
+    {
+      "source": "agents/adr-researcher.md",
+      "output": "agents/adr-researcher.mdx",
+      "title": "ADR Researcher Agent"
+    },
+    {
+      "source": "commands/adr-new.md",
+      "output": "commands/adr-new.mdx",
+      "title": "/adr:new"
+    },
+    {
+      "source": "commands/adr-list.md",
+      "output": "commands/adr-list.mdx",
+      "title": "/adr:list"
+    },
+    {
+      "source": "commands/adr-update.md",
+      "output": "commands/adr-update.mdx",
+      "title": "/adr:update"
+    },
+    {
+      "source": "commands/adr-supersede.md",
+      "output": "commands/adr-supersede.mdx",
+      "title": "/adr:supersede"
+    },
+    {
+      "source": "commands/adr-search.md",
+      "output": "commands/adr-search.mdx",
+      "title": "/adr:search"
+    },
+    {
+      "source": "commands/adr-setup.md",
+      "output": "commands/adr-setup.mdx",
+      "title": "/adr:setup"
+    },
+    {
+      "source": "commands/adr-export.md",
+      "output": "commands/adr-export.mdx",
+      "title": "/adr:export"
+    },
+    {
+      "source": "skills/adr-compliance/references/automation.md",
+      "output": "references/compliance-automation.mdx",
+      "title": "Compliance Automation"
+    },
+    {
+      "source": "skills/adr-compliance/references/compliance-patterns.md",
+      "output": "references/compliance-patterns.mdx",
+      "title": "Compliance Patterns"
+    },
+    {
+      "source": "skills/adr-decision-drivers/references/quality-attributes.md",
+      "output": "references/quality-attributes.mdx",
+      "title": "Quality Attributes"
+    },
+    {
+      "source": "skills/adr-decision-drivers/references/trade-off-patterns.md",
+      "output": "references/trade-off-patterns.mdx",
+      "title": "Trade-off Patterns"
+    },
+    {
+      "source": "skills/adr-format-madr/references/madr-examples.md",
+      "output": "references/madr-examples.mdx",
+      "title": "MADR Examples"
+    },
+    {
+      "source": "skills/adr-format-structured-madr/references/structured-madr-examples.md",
+      "output": "references/structured-madr-examples.mdx",
+      "title": "Structured MADR Examples"
+    },
+    {
+      "source": "skills/adr-fundamentals/references/decision-criteria.md",
+      "output": "references/decision-criteria.mdx",
+      "title": "Decision Criteria"
+    },
+    {
+      "source": "skills/adr-fundamentals/references/review-checklist.md",
+      "output": "references/review-checklist.mdx",
+      "title": "Review Checklist"
+    },
+    {
+      "source": "skills/adr-integration/references/ci-templates.md",
+      "output": "references/ci-templates.mdx",
+      "title": "CI Templates"
+    },
+    {
+      "source": "skills/adr-integration/references/export-templates.md",
+      "output": "references/export-templates.mdx",
+      "title": "Export Templates"
+    },
+    {
+      "source": "CHANGELOG.md",
+      "output": "changelog.mdx",
+      "title": "Changelog"
+    }
+  ]
+}

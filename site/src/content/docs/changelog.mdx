@@ -1,0 +1,46 @@
+---
+title: "Changelog"
+---
+
+All notable changes to the ADR plugin will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [0.2.0] - 2025-01-16
+
+### Added
+
+- Initial release as standalone Claude Code plugin
+- **Commands**:
+  - `/adr:new` - Create new ADRs
+  - `/adr:list` - List ADRs with filtering
+  - `/adr:update` - Update existing ADRs
+  - `/adr:supersede` - Supersede ADRs
+  - `/adr:search` - Search ADRs by content
+  - `/adr:setup` - Interactive configuration
+  - `/adr:export` - Export to HTML/JSON/PDF
+- **Agents**:
+  - `adr-author` - Proactive ADR detection
+  - `adr-compliance` - Code compliance auditing
+  - `adr-researcher` - Context research
+- **Skills**:
+  - Core: `adr-fundamentals`, `adr-decision-drivers`, `adr-quality`
+  - Formats: `adr-format-madr`, `adr-format-structured-madr`, `adr-format-nygard`, `adr-format-y-statement`, `adr-format-alexandrian`, `adr-format-business-case`, `adr-format-tyree-akerman`
+  - Specialized: `adr-compliance`, `adr-integration`
+- **Templates** for all 7 ADR formats
+- **Schemas** for export validation
+- Configuration via `.claude/adr.local.md`
+
+### Changed
+
+- Extracted from zircote/marketplace to standalone repository
+
+## [0.1.0] - 2024-12-01
+
+### Added
+
+- Initial development in marketplace monorepo
+
+[0.2.0]: https://github.com/zircote/adr/releases/tag/v0.2.0
+[0.1.0]: https://github.com/zircote/adr/releases/tag/v0.1.0

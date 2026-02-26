@@ -1,0 +1,57 @@
+---
+title: "ADR Plugin"
+description: "Complete lifecycle management for Architectural Decision Records."
+template: splash
+hero:
+  tagline: Complete lifecycle management for Architectural Decision Records. Create, review, update, supersede, and export ADRs with multi-format support and compliance auditing.
+  actions:
+    - text: Get Started
+      link: /adr/commands/adr-setup/
+      icon: right-arrow
+      variant: primary
+    - text: View on GitHub
+      link: https://github.com/zircote/adr
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid>
+  <Card title="Multi-Format Support" icon="document">
+    Seven ADR formats including MADR, Nygard, Y-Statement, Alexandrian, Business Case, Tyree-Akerman, and Structured MADR.
+  </Card>
+  <Card title="Full Lifecycle" icon="rocket">
+    Create, list, update, supersede, search, and export ADRs. Complete lifecycle management from proposal to deprecation.
+  </Card>
+  <Card title="Compliance Auditing" icon="approve-check">
+    Audit code changes against accepted ADRs. Detect violations and ensure architectural decisions are followed.
+  </Card>
+  <Card title="Research Assistant" icon="magnifier">
+    Research context, options, and best practices for architectural decisions. Analyze codebases and search the web.
+  </Card>
+</CardGrid>
+
+## Quick Start
+
+```bash
+# Install the plugin
+claude install gh:zircote/adr
+
+# Set up ADR configuration
+/adr:setup
+
+# Create your first ADR
+/adr:new
+```
+
+## What is ADR Plugin?
+
+**ADR Plugin** is a Claude Code plugin for managing Architectural Decision Records. It provides commands, agents, and skills that cover the full ADR lifecycle — from research and authoring through compliance verification and export.
+
+Key capabilities:
+
+- **7 commands** — Setup, create, list, update, supersede, search, and export ADRs
+- **3 agents** — Author (detects decisions), Compliance (audits code), Researcher (gathers context)
+- **12 skills** — Fundamentals, formats, quality review, compliance, decision drivers, and integration
+- **10 reference docs** — Decision criteria, review checklists, examples, templates, and patterns
