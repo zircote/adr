@@ -5,14 +5,6 @@ description: This skill should be used when the user asks about "MADR format", "
   or needs guidance on creating ADRs using the MADR (Markdown Architectural Decision
   Records) format.
 ---
-<!-- BEGIN MNEMONIC PROTOCOL -->
-## Memory
-
-Search first: `/mnemonic:search {relevant_keywords}`
-Capture after: `/mnemonic:capture {namespace} "{title}"`
-
-Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
-<!-- END MNEMONIC PROTOCOL -->
 
 # MADR Format
 

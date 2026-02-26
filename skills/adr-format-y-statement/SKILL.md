@@ -5,14 +5,6 @@ description: This skill should be used when the user asks about "Y-statement for
   needs guidance on creating ADRs using the Y-Statement format for concise decision
   documentation.
 ---
-<!-- BEGIN MNEMONIC PROTOCOL -->
-## Memory
-
-Search first: `/mnemonic:search {relevant_keywords}`
-Capture after: `/mnemonic:capture {namespace} "{title}"`
-
-Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
-<!-- END MNEMONIC PROTOCOL -->
 
 # Y-Statement ADR Format
 

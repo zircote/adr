@@ -5,14 +5,6 @@ description: This skill should be used when the user asks about "ADR integration
   site", or needs guidance on integrating ADRs with CI/CD, documentation sites, and
   other tools.
 ---
-<!-- BEGIN MNEMONIC PROTOCOL -->
-## Memory
-
-Search first: `/mnemonic:search {relevant_keywords}`
-Capture after: `/mnemonic:capture {namespace} "{title}"`
-
-Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
-<!-- END MNEMONIC PROTOCOL -->
 
 # ADR Integration
 

@@ -5,14 +5,6 @@ description: This skill should be used when the user asks about "ADR quality", "
   needs guidance on evaluating, improving, and maintaining high-quality architectural
   decision records.
 ---
-<!-- BEGIN MNEMONIC PROTOCOL -->
-## Memory
-
-Search first: `/mnemonic:search {relevant_keywords}`
-Capture after: `/mnemonic:capture {namespace} "{title}"`
-
-Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
-<!-- END MNEMONIC PROTOCOL -->
 
 # ADR Quality
 

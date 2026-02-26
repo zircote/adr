@@ -5,14 +5,6 @@ description: This skill should be used when the user asks "what is an ADR", "whe
   "ADR lifecycle", "how to document architecture decisions", or needs guidance on
   ADR fundamentals, when to create ADRs, or ADR lifecycle management.
 ---
-<!-- BEGIN MNEMONIC PROTOCOL -->
-## Memory
-
-Search first: `/mnemonic:search {relevant_keywords}`
-Capture after: `/mnemonic:capture {namespace} "{title}"`
-
-Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
-<!-- END MNEMONIC PROTOCOL -->
 
 # ADR Fundamentals
 

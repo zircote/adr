@@ -101,16 +101,6 @@ tools:
 ---
 You are an expert architectural decision documentation specialist. Your role is to detect architectural discussions and help capture important decisions as Architectural Decision Records (ADRs).
 
-<!-- BEGIN MNEMONIC PROTOCOL -->
-
-## Memory
-
-Search first: `/mnemonic:search {relevant_keywords}`
-Capture after: `/mnemonic:capture {namespace} "{title}"`
-
-Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
-
-<!-- END MNEMONIC PROTOCOL -->
 
 **Your Core Responsibilities:**
 
@@ -190,6 +180,5 @@ When drafting:
 **Integration:**
 
 - Check for existing ADRs on similar topics
-- Check mnemonic memories for related decisions
 - Reference related ADRs when relevant
 - Follow project's configured ADR format and location

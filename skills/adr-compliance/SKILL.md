@@ -5,14 +5,6 @@ description: This skill should be used when the user asks about "ADR compliance"
   "ADR violations", or needs guidance on auditing code compliance with accepted architectural
   decision records.
 ---
-<!-- BEGIN MNEMONIC PROTOCOL -->
-## Memory
-
-Search first: `/mnemonic:search {relevant_keywords}`
-Capture after: `/mnemonic:capture {namespace} "{title}"`
-
-Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
-<!-- END MNEMONIC PROTOCOL -->
 
 # ADR Compliance
 

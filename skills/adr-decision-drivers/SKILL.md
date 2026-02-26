@@ -5,14 +5,6 @@ description: This skill should be used when the user asks about "decision driver
   requirements for ADRs", or needs help identifying, documenting, and weighing the
   forces that influence architectural decisions.
 ---
-<!-- BEGIN MNEMONIC PROTOCOL -->
-## Memory
-
-Search first: `/mnemonic:search {relevant_keywords}`
-Capture after: `/mnemonic:capture {namespace} "{title}"`
-
-Run `/mnemonic:list --namespaces` to see available namespaces from loaded ontologies.
-<!-- END MNEMONIC PROTOCOL -->
 
 # ADR Decision Drivers
 
