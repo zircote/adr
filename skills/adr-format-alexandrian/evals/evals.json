@@ -1,0 +1,105 @@
+{
+  "skill_name": "adr-format-alexandrian",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create an ADR in Alexandrian format for choosing PostgreSQL over MongoDB for our e-commerce platform's order management system.",
+      "expected_output": "A complete Alexandrian-format ADR with all required sections: Context, Problem, Forces, Solution, and Resulting Context (with Benefits, Drawbacks, and Related Patterns/Decisions).",
+      "files": [],
+      "expectations": [
+        "Output contains a '## Forces' section with at least 3 bullet-pointed forces",
+        "Output contains a '## Problem' section with a clear problem statement",
+        "Output contains a '## Resulting Context' section with separate '### Benefits' and '### Drawbacks' subsections",
+        "Output contains a '### Related Patterns/Decisions' subsection",
+        "Output contains a '## Context' section describing background before the decision",
+        "Output contains a '## Status' section"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "What is the Alexandrian ADR format? How does it differ from other ADR formats?",
+      "expected_output": "An explanation of the Alexandrian format covering its pattern-language origins, emphasis on forces, and how it differs from simpler formats like Nygard or MADR.",
+      "files": [],
+      "expectations": [
+        "Response mentions Christopher Alexander or pattern language as the origin/inspiration",
+        "Response explains that forces are a central concept in the Alexandrian format",
+        "Response describes the Resulting Context section as including both benefits and drawbacks",
+        "Response distinguishes the Alexandrian format from at least one other ADR format or mentions when to prefer simpler formats"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I need a forces-based ADR for migrating our CI/CD pipeline from Jenkins to GitHub Actions. We have 50 microservices, a small DevOps team of 3, and a tight budget.",
+      "expected_output": "An Alexandrian-format ADR where the Forces section captures the competing tensions between team size, budget, number of services, and migration complexity.",
+      "files": [],
+      "expectations": [
+        "The Forces section includes at least 4 forces reflecting the competing constraints (team size, budget, scale of 50 microservices, migration risk)",
+        "Forces demonstrate tension between competing concerns rather than all pointing in one direction",
+        "The Solution section explains how the chosen approach addresses the identified forces",
+        "The Resulting Context section honestly lists drawbacks alongside benefits",
+        "The Context section references the current Jenkins setup and team/organizational factors"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Show me the Alexandrian ADR template structure.",
+      "expected_output": "The template structure showing all sections in the correct order: Title/Number, Date, Status, Context, Problem, Forces, Solution, Resulting Context (Benefits, Drawbacks, Related Patterns/Decisions).",
+      "files": [],
+      "expectations": [
+        "Output shows the template with sections in order: Status, Context, Problem, Forces, Solution, Resulting Context",
+        "The Resulting Context section shows three subsections: Benefits, Drawbacks, and Related Patterns/Decisions",
+        "The Forces section shows placeholder bullet points for listing multiple forces",
+        "The template uses markdown heading hierarchy (## for main sections, ### for subsections)"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Write an Alexandrian ADR for adopting Kubernetes. The only force is that our competitor uses it.",
+      "expected_output": "An Alexandrian ADR that expands beyond the single stated force to include additional relevant forces, since the Alexandrian format recommends 4-8 forces for most decisions.",
+      "files": [],
+      "expectations": [
+        "The Forces section contains more than one force, ideally 4-8 as recommended by best practices",
+        "Forces include both technical and non-technical considerations, not just the competitor angle",
+        "The Problem section frames a clear architectural challenge, not just competitive pressure",
+        "The Drawbacks subsection lists concrete negative consequences of adopting Kubernetes"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Create a pattern-based ADR for choosing between REST and GraphQL for our public API. We need to consider developer experience, performance, caching, and our team's familiarity with each approach.",
+      "expected_output": "A complete Alexandrian ADR where each specified consideration appears as a force, with the solution explaining how it resolves the tension between those forces.",
+      "files": [],
+      "expectations": [
+        "The Forces section includes forces for developer experience, performance, caching, and team familiarity",
+        "The Solution section references specific forces and explains how the chosen option addresses them",
+        "The Resulting Context includes Related Patterns/Decisions linking to related concerns like API versioning or authentication",
+        "The document follows the exact Alexandrian section ordering: Context, Problem, Forces, Solution, Resulting Context"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "I have an existing ADR in basic Nygard format (just Status, Context, Decision, Consequences). Convert it to Alexandrian format. Here is the ADR:\n\n# 5. Use Redis for Session Storage\n\nDate: 2025-01-15\n\n## Status\nAccepted\n\n## Context\nWe need a fast session store for our web application that handles 10K concurrent users.\n\n## Decision\nWe will use Redis for session storage.\n\n## Consequences\nFast reads but adds operational complexity.",
+      "expected_output": "A converted ADR that maps the Nygard sections into Alexandrian sections, extracting forces from the context, splitting consequences into benefits and drawbacks, and adding a Problem statement.",
+      "files": [],
+      "expectations": [
+        "Output preserves the original ADR number (5), title, date, and status",
+        "A '## Problem' section is added that was not in the original Nygard format",
+        "A '## Forces' section is created extracting implied forces from the original context (e.g., performance needs, concurrent user scale, operational complexity)",
+        "The single 'Consequences' line is split into separate Benefits and Drawbacks subsections under Resulting Context",
+        "The Solution section reflects the original Decision content about using Redis"
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "When should I use the Alexandrian format versus a simpler ADR format?",
+      "expected_output": "Guidance on when Alexandrian format is appropriate and when simpler formats are better, based on the complexity of forces and decision context.",
+      "files": [],
+      "expectations": [
+        "Response recommends Alexandrian format for decisions with complex, competing forces",
+        "Response suggests simpler formats when quick documentation is needed or forces are straightforward",
+        "Response mentions pattern-oriented teams as a good fit for Alexandrian format",
+        "Response mentions situations with many constraints as a use case for Alexandrian format"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "skill_name": "adr-fundamentals",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "What is an ADR and when should I create one?",
+      "expected_output": "Explains that ADRs are Architectural Decision Records that capture important decisions with context and consequences, and lists criteria for when to create them (significant impact, hard to reverse, multiple options, cross-cutting, etc.)",
+      "files": [],
+      "expectations": [
+        "Defines ADR as Architectural Decision Record that captures architectural decisions with context and consequences",
+        "Lists at least 3 criteria for when to create an ADR (e.g., significant impact, hard to reverse, multiple viable options, cross-cutting concerns, sets precedent, involves trade-offs)",
+        "Provides concrete examples of ADR-worthy decisions such as technology selection, architecture patterns, or API design",
+        "Mentions when NOT to create an ADR (routine choices, easily reversible decisions, obvious answers)"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "What are the different statuses an ADR can have and how do they transition?",
+      "expected_output": "Describes the full ADR lifecycle with all valid statuses and their transition paths.",
+      "files": [],
+      "expectations": [
+        "Lists all five statuses: proposed, accepted, rejected, deprecated, superseded",
+        "Describes the transition from proposed to accepted (approved by stakeholders)",
+        "Describes the transition from proposed to rejected (not adopted after review)",
+        "Describes the transition from accepted to deprecated and then to superseded",
+        "Explains what each status means (e.g., proposed = under consideration, superseded = replaced by newer ADR)"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "How should I name and organize ADR files in my project?",
+      "expected_output": "Covers the naming convention pattern, number format options, and directory structure for ADRs.",
+      "files": [],
+      "expectations": [
+        "Specifies the naming pattern as {NUMBER}-{slug}.md (e.g., 0001-use-postgresql-for-primary-storage.md)",
+        "Mentions number format options including 4-digit, 3-digit, and date-based",
+        "Describes the standard directory structure with docs/adr/ as the default location",
+        "Mentions module-level ADR organization for large projects as an alternative"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "I'm trying to write my first ADR and it keeps getting rejected in review. What makes a good ADR?",
+      "expected_output": "Provides guidance on writing effective ADRs including title guidelines, context best practices, decision drivers, options documentation, and consequences.",
+      "files": [],
+      "expectations": [
+        "Provides title guidelines with good/bad examples (e.g., good: 'Use PostgreSQL for primary data storage', bad: 'Database decision')",
+        "Explains context best practices including current state, problem being solved, constraints, and stakeholders",
+        "Covers documenting options with pros/cons, trade-offs, and rationale for selection/rejection",
+        "Emphasizes documenting both positive and negative consequences",
+        "Mentions common mistakes to avoid (missing context, vague options, missing trade-offs, orphaned ADRs, status neglect)"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "How do I link related ADRs together? We have a new ADR that replaces an older one.",
+      "expected_output": "Explains ADR linking types and best practices for supersession.",
+      "files": [],
+      "expectations": [
+        "Lists link relationship types: supersedes, superseded-by, relates-to, amends",
+        "Emphasizes bidirectional linking (both supersedes and superseded-by must be present)",
+        "Advises keeping superseded ADRs for historical context rather than deleting them",
+        "Mentions including a reason for supersession"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "My team lead says we should decide whether to use Redis or Memcached for our caching layer. Does this warrant an ADR?",
+      "expected_output": "Applies decision criteria to the specific scenario and concludes it likely warrants an ADR, explaining the scoring or criteria that apply.",
+      "files": [],
+      "expectations": [
+        "Concludes that a caching layer decision likely warrants an ADR",
+        "References specific criteria such as technology selection, cross-cutting impact, or difficulty of reversal",
+        "Mentions the decision significance scoring dimensions (reversibility, scope of impact, stakeholder interest, future implications) or the ADR decision matrix",
+        "Classifies this as at least a medium-impact decision (technology adoption or performance category)"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "We want to integrate ADRs into our pull request workflow. What's the recommended process?",
+      "expected_output": "Describes the PR-based ADR workflow and integration with development processes.",
+      "files": [],
+      "expectations": [
+        "Describes the PR workflow: create ADR in proposed status, open PR for review, discuss and refine, update to accepted when merged",
+        "Mentions referencing ADRs in related implementation PRs",
+        "Suggests cross-referencing ADRs from architecture documentation, README files, code comments, or wiki",
+        "Mentions reading project configuration from .claude/adr.local.md for directory location, numbering format, and template preferences"
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "What should I check when reviewing a teammate's ADR before approving it?",
+      "expected_output": "Provides a comprehensive review checklist covering essential elements, quality criteria, and red flags.",
+      "files": [],
+      "expectations": [
+        "Covers essential element checks: clear title, valid status, sufficient context, clear decision statement, documented consequences",
+        "Mentions quality criteria: completeness, clarity, objectivity, consistency",
+        "Lists red flags such as no cons for chosen option, only one option considered, consequences only listing benefits",
+        "Includes review questions like whether a new team member would understand the decision",
+        "Mentions post-acceptance steps such as updating status, notifying the team, and updating the ADR index"
+      ]
+    }
+  ]
+}

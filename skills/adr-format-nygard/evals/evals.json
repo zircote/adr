@@ -1,0 +1,106 @@
+{
+  "skill_name": "adr-format-nygard",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create an ADR using the Nygard format for our decision to use PostgreSQL instead of MongoDB for our user data store.",
+      "expected_output": "A complete ADR in Nygard format with all five sections: numbered title, date, status, context, decision, and consequences. The context should be value-neutral, the decision should clearly state PostgreSQL was chosen, and consequences should include both positive and negative outcomes.",
+      "files": [],
+      "expectations": [
+        "Output contains a title formatted as '# {NUMBER}. {TITLE}' with a descriptive title about the database choice",
+        "Output contains a 'Date:' line with a date value",
+        "Output contains exactly the four section headings: '## Status', '## Context', '## Decision', '## Consequences'",
+        "The Context section uses value-neutral language describing forces without opinions or justifications",
+        "The Decision section explicitly states the choice of PostgreSQL",
+        "The Consequences section includes at least one negative or trade-off consequence, not only benefits"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "What is the Nygard ADR format? Explain its structure and when I should use it.",
+      "expected_output": "An explanation of the Nygard format covering its origin (Michael Nygard, 2011), its five sections, its emphasis on simplicity and value-neutral context, and guidance on when it is appropriate versus when other formats might be better.",
+      "files": [],
+      "expectations": [
+        "Response attributes the format to Michael Nygard",
+        "Response identifies all five sections: Title, Date, Status, Context, Decision, Consequences",
+        "Response describes the Context section as requiring value-neutral language",
+        "Response mentions when the Nygard format is best suited (simple decisions, quick documentation) and when to consider alternatives (complex trade-offs, multiple options)",
+        "Response does not invent additional sections beyond the five defined in the Nygard format"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Show me the Nygard ADR template.",
+      "expected_output": "The raw Nygard template with placeholder markers for NUMBER, TITLE, DATE, STATUS and the three body sections (Context, Decision, Consequences) with guidance text.",
+      "files": [],
+      "expectations": [
+        "Output includes the template heading pattern '# {NUMBER}. {TITLE}' or equivalent placeholder syntax",
+        "Output includes 'Date:' with a placeholder for the date",
+        "Output includes all four section headings: '## Status', '## Context', '## Decision', '## Consequences'",
+        "Template does not include sections from other formats such as 'Options Considered', 'Pros and Cons', or 'More Information'"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "What valid status values can a Nygard ADR have?",
+      "expected_output": "A list of the valid status values: Proposed, Accepted, Deprecated, and Superseded (with reference to the superseding ADR).",
+      "files": [],
+      "expectations": [
+        "Response includes 'Proposed' as a valid status",
+        "Response includes 'Accepted' as a valid status",
+        "Response includes 'Deprecated' as a valid status",
+        "Response includes 'Superseded' with mention of referencing the superseding ADR (e.g., 'Superseded by ADR-XXX')"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Write a Nygard ADR for deciding to adopt Kubernetes for container orchestration. The status should be Proposed.",
+      "expected_output": "A Nygard-format ADR with the status explicitly set to 'Proposed', value-neutral context about container orchestration needs, a clear decision statement about Kubernetes, and balanced consequences.",
+      "files": [],
+      "expectations": [
+        "The Status section contains 'Proposed'",
+        "The title follows the '# {NUMBER}. {TITLE}' pattern and mentions Kubernetes",
+        "The Context section describes forces driving the need for container orchestration without advocating for Kubernetes",
+        "The Decision section uses active voice (e.g., 'We will...')",
+        "The Consequences section lists at least one negative or neutral consequence of adopting Kubernetes"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "How does the Nygard format differ from MADR?",
+      "expected_output": "A comparison highlighting that Nygard has 5 sections vs MADR's ~10, Nygard keeps options implicit while MADR documents them explicitly, Nygard folds pros/cons into consequences while MADR has a separate section, and Nygard is lower complexity.",
+      "files": [],
+      "expectations": [
+        "Response identifies Nygard as having fewer sections (5) compared to MADR (approximately 10)",
+        "Response notes that Nygard does not explicitly document considered options while MADR does",
+        "Response mentions that Nygard handles pros/cons within the Consequences section rather than a dedicated section",
+        "Response characterizes Nygard as lower complexity or simpler than MADR"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "I wrote this ADR Context section: 'PostgreSQL is clearly the best choice because it has the most features and MongoDB is terrible for relational data.' Is this good for a Nygard ADR?",
+      "expected_output": "Feedback that the context section violates Nygard's value-neutral principle. It should describe facts and forces objectively without opinions like 'clearly the best' or 'terrible'. A corrected version should be suggested.",
+      "files": [],
+      "expectations": [
+        "Response identifies that the provided context is NOT value-neutral and violates Nygard format guidelines",
+        "Response specifically calls out opinionated language such as 'clearly the best' or 'terrible' as problematic",
+        "Response explains that the Context section should describe facts and forces objectively",
+        "Response provides or suggests a corrected, value-neutral version of the context"
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Create an ADR in classic format for superseding our previous ADR-003 about using REST. We're now moving to GraphQL for our public API.",
+      "expected_output": "A Nygard-format ADR (recognizing 'classic format' as Nygard) with status set to 'Accepted' or similar, and a reference to superseding ADR-003. The context should explain the shift from REST to GraphQL factually.",
+      "files": [],
+      "expectations": [
+        "Response recognizes 'classic format' as the Nygard format and produces an ADR with exactly the five Nygard sections",
+        "The Status section references superseding ADR-003 (e.g., 'Supersedes ADR-003' or 'Accepted, supersedes ADR-003')",
+        "The Decision section clearly states the move to GraphQL for the public API",
+        "The Context section describes forces that led to reconsidering REST without using biased language against REST",
+        "The Consequences section addresses implications of the API change including migration or backward-compatibility concerns"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "skill_name": "adr-quality",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Review this ADR for quality:\n\n# ADR-042: Database\n\n## Status\nAccepted\n\n## Context\nWe need a database.\n\n## Decision\nWe will use PostgreSQL.\n\n## Consequences\nIt will be good for our project.",
+      "expected_output": "Identifies multiple quality issues: vague title, thin context, no options considered, no decision drivers, no trade-offs or negative consequences, and missing stakeholder information.",
+      "files": [],
+      "expectations": [
+        "Identifies the title as too vague or not action-oriented, referencing good title patterns like 'Use PostgreSQL for primary data storage'",
+        "Flags the context as a 'thin context' anti-pattern with only a single sentence and no background, constraints, or stakeholders",
+        "Notes that no alternative options were considered, which is a red flag per the review checklist",
+        "Points out that consequences list only positives with no trade-offs, risks, or negative outcomes documented",
+        "Recommends adding specific, measurable decision drivers rather than having none"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "What makes a good ADR? Give me a checklist I can use when writing one.",
+      "expected_output": "Provides a comprehensive checklist covering the 5 C's framework (Clear, Complete, Concise, Contextual, Current) and section-level quality checks.",
+      "files": [],
+      "expectations": [
+        "References the 5 C's of ADR Quality: Clear, Complete, Concise, Contextual, and Current",
+        "Includes checklist items for title quality such as being specific, searchable, and action-oriented",
+        "Covers context quality requirements including problem statement, current state, constraints, and stakeholders",
+        "Mentions that consequences should include both positive and negative outcomes along with trade-offs",
+        "Includes recommended length guidelines for sections such as context (100-300 words) or decision drivers (3-8 items)"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I'm reviewing a teammate's ADR. It proposes adopting GraphQL. The ADR lists 4 options but the alternatives to GraphQL each have 3-4 cons listed while GraphQL has zero cons. What quality issues should I raise?",
+      "expected_output": "Identifies the straw man options anti-pattern and the missing trade-offs anti-pattern, and provides guidance on fair option evaluation.",
+      "files": [],
+      "expectations": [
+        "Identifies the 'Straw Man Options' anti-pattern where alternatives are included just to be rejected",
+        "Flags the 'Missing Trade-offs' anti-pattern since no cons are listed for the chosen option",
+        "Explains that each option should have a fair pros and cons analysis with genuine consideration",
+        "Recommends documenting accepted trade-offs and risks for the chosen option (GraphQL)",
+        "References the red flag that 'no cons listed for chosen option' is a specific review concern"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "How do I maintain ADR quality over time? We have about 80 ADRs and some feel outdated.",
+      "expected_output": "Provides guidance on regular audits, status hygiene, and the ADR health indicators metrics for ongoing quality maintenance.",
+      "files": [],
+      "expectations": [
+        "Recommends periodic audits checking for outdated information, incorrect status, broken links, and missing relationships",
+        "Covers status hygiene practices like updating to deprecated, linking superseding ADRs, and archiving obsolete ones",
+        "References ADR health indicators or metrics such as status currency thresholds (monthly=good, >6 months=critical)",
+        "Mentions the 'Stale Status' and 'Orphan ADRs' anti-patterns as things to watch for during maintenance",
+        "Suggests ensuring ADRs integrate with architecture documentation, README files, and onboarding materials"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Can you help me improve the decision drivers in my ADR? Currently I have: 'Performance, Security, Cost, Developer Experience'",
+      "expected_output": "Identifies the drivers as suffering from the 'Vague Drivers' anti-pattern and provides guidance on making them specific and measurable.",
+      "files": [],
+      "expectations": [
+        "Identifies the listed drivers as vague, matching the 'Vague Drivers' anti-pattern",
+        "Recommends making drivers specific and measurable, e.g., 'sub-100ms response time' instead of just 'performance'",
+        "Advises that drivers should be prioritized or weighted",
+        "Suggests drivers should be traceable to stakeholder needs",
+        "Recommends drivers be testable or measurable with concrete criteria"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Review this ADR context section for quality:\n\n'We are building a new microservice. After team discussion, we decided to use Kubernetes. This ADR documents that decision.'",
+      "expected_output": "Identifies the context as exhibiting hindsight bias and thin context, missing critical information about the problem, constraints, and stakeholders.",
+      "files": [],
+      "expectations": [
+        "Flags the 'Hindsight Bias' anti-pattern since the ADR was written after the decision was already made",
+        "Identifies 'Thin Context' as the context lacks background on the problem being solved, current state, and constraints",
+        "Notes that the context should answer what problem is being solved, not just state a decision was made",
+        "Points out missing stakeholder information and constraint documentation",
+        "Recommends the context be 100-300 words with specifics about the problem, current state, and growth expectations"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "What are the most common ADR quality problems and how do I fix them?",
+      "expected_output": "Covers the major anti-patterns table including Thin Context, Missing Trade-offs, Straw Man Options, Vague Drivers, Orphan ADRs, Stale Status, and Hindsight Bias with fixes for each.",
+      "files": [],
+      "expectations": [
+        "Lists at least 5 of the 7 defined anti-patterns: Thin Context, Missing Trade-offs, Straw Man Options, Vague Drivers, Orphan ADRs, Stale Status, Hindsight Bias",
+        "Provides specific fixes for each anti-pattern mentioned, not just descriptions",
+        "Includes the red flags checklist items such as 'only one option considered' and 'no cons listed for chosen option'",
+        "References the quality metrics or health indicators for measuring improvement"
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "I need to set up a peer review process for ADRs on my team. What should reviewers look for?",
+      "expected_output": "Provides the peer review guidelines including the 5-step review process and the key review questions to ask.",
+      "files": [],
+      "expectations": [
+        "Includes the review step of reading for understanding first to check if the decision is clear without extra context",
+        "Covers checking decision drivers for completeness and prioritization",
+        "Mentions evaluating whether alternatives were seriously considered",
+        "Includes the review questions such as 'What problem does this solve?' and 'What trade-offs are we accepting?'",
+        "References the self-review checklist dimensions: Completeness, Clarity, and Accuracy"
+      ]
+    }
+  ]
+}

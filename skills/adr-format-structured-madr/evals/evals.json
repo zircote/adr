@@ -1,0 +1,112 @@
+{
+  "skill_name": "adr-format-structured-madr",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create a structured MADR for choosing Redis as our caching layer for the payments service. We considered Redis and Memcached. Status is accepted.",
+      "expected_output": "A complete Structured MADR document with YAML frontmatter, all required sections including Context with subsections, hierarchical Decision Drivers, comprehensive option analysis for both Redis and Memcached, split Consequences, and an Audit section.",
+      "files": [],
+      "expectations": [
+        "Output contains YAML frontmatter delimited by --- with at minimum: title, description, type: adr, category, tags, status: accepted, created, updated, author, and project fields",
+        "H1 title follows the format ADR-{NUMBER}: with a descriptive title about Redis/caching",
+        "Context section contains both a 'Background and Problem Statement' subsection and a 'Current Limitations' subsection",
+        "Decision Drivers section contains both 'Primary Decision Drivers' and 'Secondary Decision Drivers' subsections",
+        "Both Redis and Memcached options include Description, Advantages, Disadvantages, and Risk Assessment with Technical/Schedule/Ecosystem risk levels",
+        "Consequences section is split into Positive, Negative, and Neutral subsections",
+        "An Audit section is present with Status set to Pending or a date-stamped entry"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "What fields are required in the frontmatter for a structured MADR?",
+      "expected_output": "A list of all required YAML frontmatter fields with descriptions of each.",
+      "files": [],
+      "expectations": [
+        "Lists title, description, type, category, tags, status, created, updated, author, and project as required fields",
+        "Mentions that type must always be 'adr'",
+        "Identifies technologies, audience, and related as optional fields",
+        "Mentions that dates should use YYYY-MM-DD format"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Write a structured MADR with status 'superseded' for our old REST API decision that has been replaced by ADR-0012 which chose GraphQL.",
+      "expected_output": "A Structured MADR with superseded status, including supersession reference to ADR-0012 in both the Status section and the related frontmatter field.",
+      "files": [],
+      "expectations": [
+        "Frontmatter status field is set to 'superseded'",
+        "Status section body mentions supersession by ADR-0012 (e.g., 'Superseded by ADR-0012')",
+        "Frontmatter related field includes a reference to adr_0012.md or ADR-0012",
+        "Related Decisions section contains a link to ADR-0012 with context about the GraphQL replacement",
+        "All required sections are still present including Audit section"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "How does structured MADR differ from standard MADR?",
+      "expected_output": "A clear comparison highlighting the key differences between standard MADR and Structured MADR.",
+      "files": [],
+      "expectations": [
+        "Mentions that Structured MADR requires YAML frontmatter while standard MADR does not",
+        "Explains that option analysis uses full narrative with risk assessment rather than simple pros/cons lists",
+        "Notes that consequences are split into Positive/Negative/Neutral rather than a single section",
+        "States that an audit trail section is required in Structured MADR but absent in standard MADR",
+        "Mentions that decision drivers use a Primary/Secondary hierarchy"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Write the audit section for ADR-0007 about using PostgreSQL. The audit found that connection pooling via pgBouncer is implemented in deploy/pgbouncer.yaml lines 1-45, but the required pg_stat_statements extension is not yet enabled, making it non-compliant.",
+      "expected_output": "A properly formatted audit section with a findings table showing one compliant and one non-compliant finding, overall status of Non-Compliant or Partial, and action required.",
+      "files": [],
+      "expectations": [
+        "Audit section contains a date-stamped subsection header (### YYYY-MM-DD)",
+        "Overall Status is 'Non-Compliant' or 'Partial' (not 'Compliant' since pg_stat_statements is missing)",
+        "Findings table includes columns: Finding, Files, Lines, Assessment",
+        "pgBouncer finding is marked as 'compliant' with reference to deploy/pgbouncer.yaml and lines L1-L45",
+        "pg_stat_statements finding is marked as 'non-compliant'",
+        "Action Required section is present and not 'None' since there is a non-compliant finding"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Create a structured MADR for choosing between Kubernetes and Docker Swarm for container orchestration. The decision is still proposed and hasn't been accepted yet. We're in the healthcare domain so compliance is critical.",
+      "expected_output": "A Structured MADR with proposed status, healthcare/compliance-oriented context, comprehensive analysis of both options with risk assessments emphasizing regulatory concerns, and a Pending audit section.",
+      "files": [],
+      "expectations": [
+        "Frontmatter status is 'proposed' (not accepted or any other value)",
+        "Frontmatter category relates to infrastructure or architecture",
+        "Context section references healthcare domain, compliance requirements, or regulatory concerns",
+        "Both Kubernetes and Docker Swarm options include Risk Assessment sections with Technical, Schedule, and Ecosystem risk levels",
+        "Audit section is present with status 'Pending' since the decision is only proposed"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "When should I use structured MADR instead of regular MADR or Nygard format?",
+      "expected_output": "Guidance on when Structured MADR is appropriate versus other formats, with specific use cases.",
+      "files": [],
+      "expectations": [
+        "Recommends Structured MADR for projects requiring compliance auditing or regulated industries",
+        "Mentions that standard MADR is better for simpler tech decisions",
+        "Mentions that Nygard format is suited for quick records or simple decisions",
+        "References that Structured MADR has 12+ sections compared to MADR's 10 and Nygard's 5",
+        "Mentions healthcare or finance as examples of regulated industries where Structured MADR fits"
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "I have an existing ADR in plain MADR format about using JWT for authentication. Convert it to structured MADR format. The original has: title 'Use JWT for Auth', status accepted, context about needing stateless auth, options were JWT and session cookies, decided JWT. Created 2025-06-15.",
+      "expected_output": "A complete Structured MADR conversion with all plain MADR content restructured into Structured MADR sections, new YAML frontmatter added, consequences split out, and audit section appended.",
+      "files": [],
+      "expectations": [
+        "YAML frontmatter is added with all required fields including title, description, type: adr, category, tags, status: accepted, created: 2025-06-15, updated date, author, and project",
+        "Context is restructured into 'Background and Problem Statement' and 'Current Limitations' subsections",
+        "Decision Drivers are organized into Primary and Secondary hierarchies",
+        "JWT and session cookies options each have Description, Advantages, Disadvantages, and Risk Assessment subsections",
+        "Consequences section is split into Positive, Negative, and Neutral subsections",
+        "Audit section is appended with Pending status since this is a format conversion"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "skill_name": "adr-format-tyree-akerman",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create an ADR using the Tyree-Akerman format for choosing PostgreSQL as our primary database over MongoDB and DynamoDB. We need this for our enterprise compliance audit.",
+      "expected_output": "A complete Tyree-Akerman ADR with all 12+ sections filled in, including Metadata table with RACI roles, Issue, Decision, Assumptions, Constraints, Positions for all three database options, Argument, Implications, and all four traceability sections.",
+      "files": [],
+      "expectations": [
+        "Output contains a Metadata table with Status, Date, Decision Makers, Consulted, and Informed fields",
+        "Output contains an Issue section describing the database selection architectural question",
+        "Output contains a Decision section with a clear statement choosing PostgreSQL",
+        "Output contains an Assumptions section with bullet-pointed assumptions",
+        "Output contains a Constraints section with bullet-pointed constraints",
+        "Output contains a Positions section with at least three subsections analyzing PostgreSQL, MongoDB, and DynamoDB"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "What is the Tyree-Akerman ADR format and when should I use it?",
+      "expected_output": "An explanation of the Tyree-Akerman format covering its origins (Jeff Tyree and Art Akerman), its key characteristics (comprehensive, traceable, enterprise-ready, RACI-aware), its section structure, and guidance on when it is and is not appropriate.",
+      "files": [],
+      "expectations": [
+        "Response mentions Jeff Tyree and Art Akerman as the creators/developers of the format",
+        "Response describes the format as comprehensive and enterprise-grade or enterprise-ready",
+        "Response mentions RACI or stakeholder governance as a feature of the format",
+        "Response lists appropriate use cases such as enterprise environments, formal governance, or audit trail needs",
+        "Response mentions situations where other formats may be preferable, such as small teams or quick documentation needs"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Show me the Tyree-Akerman ADR template structure with all required sections.",
+      "expected_output": "The complete template structure showing all sections: Metadata table, Issue, Decision, Assumptions, Constraints, Positions, Argument, Implications, Related Decisions, Related Requirements, Related Artifacts, Related Principles, and Notes.",
+      "files": [],
+      "expectations": [
+        "Output includes the Metadata table structure with Status, Date, Decision Makers, Consulted, and Informed rows",
+        "Output includes all core sections: Issue, Decision, Assumptions, Constraints, Positions, Argument, Implications",
+        "Output includes all four traceability sections: Related Decisions, Related Requirements, Related Artifacts, Related Principles",
+        "Output includes a Notes section",
+        "The template uses markdown formatting with heading levels for sections"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Write a formal ADR in Tyree-Akerman format for migrating from a monolith to microservices. Decision makers are the CTO and VP of Engineering. The legal team and security team were consulted.",
+      "expected_output": "A Tyree-Akerman ADR with the Metadata table populated with the specified roles, and all sections filled with content relevant to monolith-to-microservices migration.",
+      "files": [],
+      "expectations": [
+        "Metadata table lists CTO and VP of Engineering as Decision Makers",
+        "Metadata table lists legal team and security team under Consulted",
+        "Output contains an Argument section explaining why microservices was chosen over the monolith",
+        "Output contains an Implications section listing follow-up actions or changes required by the migration",
+        "Output contains Related Decisions, Related Requirements, Related Artifacts, and Related Principles sections"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "How does the Tyree-Akerman format compare to MADR and Nygard formats?",
+      "expected_output": "A comparison covering section count, traceability depth, governance features, and ideal use cases for each format.",
+      "files": [],
+      "expectations": [
+        "Response states Tyree-Akerman has 12 or more sections, more than MADR and Nygard",
+        "Response describes Tyree-Akerman as having extensive traceability compared to limited or none for the others",
+        "Response mentions Tyree-Akerman includes RACI-style governance metadata while others have less governance support",
+        "Response identifies Tyree-Akerman as best suited for enterprise use while Nygard suits quick documentation"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Create a comprehensive ADR for choosing Kubernetes over ECS and Docker Swarm for container orchestration. Include specific assumptions about team expertise and constraints about our AWS-only infrastructure.",
+      "expected_output": "A Tyree-Akerman format ADR with populated Assumptions section mentioning team expertise and Constraints section mentioning AWS-only infrastructure, along with all other required sections.",
+      "files": [],
+      "expectations": [
+        "Output contains an Assumptions section that references team expertise or skills",
+        "Output contains a Constraints section that references AWS-only or cloud provider infrastructure limitation",
+        "Output contains Positions subsections analyzing Kubernetes, ECS, and Docker Swarm individually",
+        "Output contains an Argument section explaining why Kubernetes was selected over the alternatives",
+        "The ADR follows the Tyree-Akerman structure with a Metadata table, Issue, Decision, and all traceability sections"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "I need a sophisticated enterprise ADR but only have the decision and two options. The decision is to use GraphQL over REST for our API layer. Fill in the rest of the Tyree-Akerman template with reasonable content.",
+      "expected_output": "A fully populated Tyree-Akerman ADR about GraphQL vs REST with all sections completed, including inferred assumptions, constraints, implications, and traceability placeholders.",
+      "files": [],
+      "expectations": [
+        "Output contains a Decision section stating the choice of GraphQL over REST",
+        "Output contains Positions subsections for at least GraphQL and REST with analysis of each",
+        "Output contains populated Assumptions and Constraints sections with reasonable inferred content rather than empty placeholders",
+        "Output contains an Implications section with specific follow-up actions related to adopting GraphQL",
+        "The Metadata table is present with placeholder or suggested values for Decision Makers, Consulted, and Informed"
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "What are the best practices for the Assumptions and Constraints sections in a Tyree-Akerman ADR?",
+      "expected_output": "Guidance on writing effective Assumptions and Constraints sections, including being explicit, documenting all constraints even obvious ones, reviewing assumptions periodically, and noting when constraints are lifted.",
+      "files": [],
+      "expectations": [
+        "Response advises being explicit about assumptions",
+        "Response recommends documenting all constraints including obvious ones",
+        "Response mentions reviewing or revisiting assumptions periodically",
+        "Response notes that if assumptions prove wrong the decision may need revisiting"
+      ]
+    }
+  ]
+}

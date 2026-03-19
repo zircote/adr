@@ -1,0 +1,109 @@
+{
+  "skill_name": "adr-decision-drivers",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I need to write an ADR for choosing a database for our new service. What decision drivers should I consider?",
+      "expected_output": "A structured list of decision driver categories relevant to database selection, including functional, quality attribute, constraint, business, technical, and team drivers with specific discovery questions.",
+      "files": [],
+      "expectations": [
+        "Response includes multiple categories of decision drivers (at least functional, quality attributes, constraints, and business drivers)",
+        "Response includes specific discovery questions or examples relevant to database selection (e.g., query patterns, consistency requirements, data volume)",
+        "Response references quality attributes such as performance, scalability, availability, or reliability",
+        "Response mentions constraints like budget, timeline, or technology mandates as a driver category",
+        "Response suggests documenting drivers with specific, measurable descriptions rather than vague labels"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "What are quality attributes and how do I use them as decision drivers in an ADR?",
+      "expected_output": "An explanation of quality attributes (the -ilities) with definitions, measures, and guidance on incorporating them into ADR decision driver sections.",
+      "files": [],
+      "expectations": [
+        "Response defines quality attributes as measurable properties of how well a system performs (not what it does)",
+        "Response lists multiple quality attributes with definitions (e.g., performance, scalability, availability, maintainability, security)",
+        "Response includes concrete measures for at least some attributes (e.g., latency in ms, uptime percentage, error rate)",
+        "Response distinguishes between runtime attributes (performance, availability) and development attributes (maintainability, testability)",
+        "Response shows how to document quality attributes in an ADR Decision Drivers section with specific, measurable descriptions"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "We're deciding between a monolith and microservices. Help me identify the trade-offs for our ADR.",
+      "expected_output": "A trade-off analysis covering the key tensions between monolith and microservices, with a framework for documenting these in an ADR.",
+      "files": [],
+      "expectations": [
+        "Response identifies specific trade-offs such as simplicity vs. independent scaling, deployment complexity, and team autonomy",
+        "Response covers both sides of each trade-off rather than advocating for one option",
+        "Response suggests a format for documenting trade-offs in the ADR (e.g., trade-off matrix or explicit trade-off section)",
+        "Response recommends considering team size, operational maturity, or scale requirements as decision factors",
+        "Response includes guidance on how to express consequences (good/bad/neutral) for the chosen option"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "My ADR has decision drivers listed as just 'Performance', 'Cost', 'Easy to use'. How can I improve them?",
+      "expected_output": "Critique of the vague drivers with concrete guidance on making them specific, measurable, and prioritized.",
+      "files": [],
+      "expectations": [
+        "Response identifies the current drivers as too vague and lacking specifics",
+        "Response provides rewritten examples with measurable targets (e.g., 'Sub-200ms API response time' instead of 'Performance')",
+        "Response recommends adding context about why each driver matters",
+        "Response suggests a prioritization approach such as MoSCoW, ranking, or weighted scoring",
+        "Response follows the format pattern: **{Driver Name}** - {Brief description of the driver and why it matters}"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "How do I prioritize competing decision drivers when they conflict with each other? We need high availability but have a limited budget.",
+      "expected_output": "Guidance on prioritization methods and trade-off resolution strategies for conflicting drivers, applied to the availability vs. cost example.",
+      "files": [],
+      "expectations": [
+        "Response presents at least one prioritization method (MoSCoW, ranking, or weighted scoring)",
+        "Response addresses the specific availability vs. cost tension with concrete resolution strategies",
+        "Response mentions that higher availability requires redundancy which increases cost",
+        "Response suggests documenting accepted trade-offs explicitly in the ADR",
+        "Response recommends involving stakeholders to determine which driver takes precedence"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "I have three options for our API gateway. How do I create an evaluation matrix using decision drivers to compare them objectively?",
+      "expected_output": "Step-by-step guidance on building a weighted evaluation matrix with drivers as criteria, scoring options, and selecting the best fit.",
+      "files": [],
+      "expectations": [
+        "Response describes creating a matrix with drivers as rows and options as columns",
+        "Response includes a scoring mechanism (e.g., ++/+/0/-/-- or numeric 1-5 scale)",
+        "Response recommends assigning weights to drivers based on their priority",
+        "Response shows a template or example of a completed evaluation matrix",
+        "Response warns against treating all drivers as equal weight"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "What's the difference between a constraint and a quality attribute as decision drivers?",
+      "expected_output": "Clear distinction between constraints (fixed limitations) and quality attributes (desired system properties), with examples and how each is documented differently in an ADR.",
+      "files": [],
+      "expectations": [
+        "Response defines constraints as fixed, non-negotiable limitations (budget, timeline, regulations, technology mandates)",
+        "Response defines quality attributes as desired properties of system behavior that can be measured and traded off",
+        "Response provides concrete examples of each (e.g., constraint: 'GDPR compliance required'; quality attribute: '99.9% availability')",
+        "Response explains that constraints narrow the solution space while quality attributes help rank remaining options",
+        "Response shows how both appear in a Decision Drivers section of an ADR"
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "We need to decide between building our own auth system or buying an identity provider. What decision drivers should guide this build vs. buy decision?",
+      "expected_output": "Decision drivers specific to build vs. buy including cost, time-to-market, control, maintenance burden, team skills, and security compliance.",
+      "files": [],
+      "expectations": [
+        "Response frames the decision using the build vs. buy trade-off pattern (control vs. speed, customization vs. maintenance)",
+        "Response identifies drivers across multiple categories: business (cost, time-to-market), technical (maintainability, security), and team (skills, capacity)",
+        "Response asks whether authentication is a core competency for the organization",
+        "Response mentions compliance or security certification requirements as a relevant driver",
+        "Response suggests evaluating total cost of ownership rather than just upfront cost"
+      ]
+    }
+  ]
+}

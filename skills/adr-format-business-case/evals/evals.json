@@ -1,0 +1,96 @@
+{
+  "skill_name": "adr-format-business-case",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create a business case ADR for migrating our e-commerce platform from on-premise to AWS cloud. The migration is expected to cost $500K upfront with $15K/month ongoing, but should reduce infrastructure costs by 40% over 3 years.",
+      "expected_output": "A complete business case ADR with all required sections filled in for a cloud migration scenario, including financial analysis with the provided numbers.",
+      "files": [],
+      "expectations": [
+        "Output contains an Executive Summary section with a concise 2-3 sentence overview of the cloud migration decision",
+        "Output contains a SWOT Analysis section with all four subsections: Strengths, Weaknesses, Opportunities, and Threats",
+        "Output contains a Cost-Benefit Analysis section that references the $500K upfront cost and $15K/month ongoing cost",
+        "Output contains an ROI Assessment that references or calculates against the 40% infrastructure cost reduction",
+        "Output contains a Stakeholder Sign-off table with Role, Name, Date, and Signature columns"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I need an executive ADR for choosing between three CRM vendors: Salesforce, HubSpot, and a custom-built solution. This needs formal approval from the VP of Sales and CFO.",
+      "expected_output": "A business case ADR with three clearly defined options, each with Cost/Effort/Risk/Alignment metrics, and a stakeholder sign-off section listing the VP of Sales and CFO.",
+      "files": [],
+      "expectations": [
+        "Output contains at least three options under Options Considered, one for each CRM vendor (Salesforce, HubSpot, custom-built)",
+        "Each option includes Cost, Effort, Risk, and Alignment fields",
+        "Output contains a Decision section stating the chosen option with justification",
+        "Stakeholder Sign-off table includes roles for VP of Sales and CFO",
+        "Output contains a Business Context section describing the CRM selection situation"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Show me the business case ADR template. I want to understand the format before I write one.",
+      "expected_output": "The business case ADR template structure is displayed with all sections explained, without filling in specific decision content.",
+      "files": [],
+      "expectations": [
+        "Output includes the template structure with placeholder markers or section descriptions",
+        "Output explains or shows the SWOT Analysis section with Strengths, Weaknesses, Opportunities, and Threats",
+        "Output explains or shows the Cost-Benefit Analysis section with Costs, Benefits, and ROI Assessment subsections",
+        "Output explains or shows the Implementation section with Timeline, Resources Required, and Success Metrics",
+        "Output mentions when to use the business case format (executive decisions, significant financial impact, formal approval)"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Write a cost-benefit ADR for hiring 5 additional engineers versus outsourcing to a contractor. Include risk assessment and ROI projections.",
+      "expected_output": "A business case ADR comparing hiring vs outsourcing with detailed cost-benefit analysis, risk assessment table, and ROI projections.",
+      "files": [],
+      "expectations": [
+        "Output contains at least two options: hiring engineers and outsourcing to contractors",
+        "Cost-Benefit Analysis section includes both initial investment and ongoing costs for the options",
+        "Risk Assessment section contains a table with Likelihood, Impact, and Mitigation columns",
+        "ROI Assessment section includes projected returns or payback period",
+        "Output contains a Problem Statement section articulating the staffing need"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Create an MBA-style ADR for whether our SaaS startup should pursue SOC 2 compliance now or delay 12 months. Our largest prospect requires it for a $2M annual contract.",
+      "expected_output": "A business case ADR analyzing SOC 2 compliance timing with financial analysis tied to the $2M contract opportunity.",
+      "files": [],
+      "expectations": [
+        "Output contains an Executive Summary referencing the SOC 2 compliance decision and its business impact",
+        "SWOT Analysis includes the $2M contract opportunity as a factor",
+        "Options Considered includes at least two options: pursuing SOC 2 now and delaying 12 months",
+        "Cost-Benefit Analysis quantifies the opportunity cost of delay against the $2M contract",
+        "Implementation section includes a timeline with phases or milestones for the chosen approach"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "What sections does a SWOT ADR have? How is it different from a regular ADR?",
+      "expected_output": "An explanation of the business case ADR format sections, highlighting what makes it distinct from standard ADR formats, particularly the SWOT analysis, financial sections, and stakeholder sign-off.",
+      "files": [],
+      "expectations": [
+        "Output lists the key sections: Executive Summary, Business Context, Problem Statement, SWOT Analysis, Options Considered, Decision, Cost-Benefit Analysis, Implementation, Risk Assessment, Stakeholder Sign-off",
+        "Output explains the SWOT Analysis component (Strengths, Weaknesses, Opportunities, Threats)",
+        "Output distinguishes the business case format from simpler ADR formats by mentioning financial analysis or executive focus",
+        "Output mentions the Stakeholder Sign-off section as a distinguishing feature"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Create an ROI ADR for replacing our legacy monolith with microservices. The current system costs $800K/year in maintenance. We estimate the rewrite at $1.2M over 18 months with projected maintenance savings of 60%.",
+      "expected_output": "A business case ADR for a monolith-to-microservices migration with detailed financial modeling using the provided figures.",
+      "files": [],
+      "expectations": [
+        "Cost-Benefit Analysis references the $800K/year current maintenance cost",
+        "Cost-Benefit Analysis references the $1.2M rewrite cost estimate",
+        "ROI Assessment calculates or discusses the 60% maintenance savings and payback period",
+        "Implementation section includes a timeline spanning approximately 18 months",
+        "Risk Assessment table includes at least one risk specific to microservices migration (e.g., complexity, data migration, service boundaries)",
+        "Output follows the business case template structure with numbered ADR title and Date field"
+      ]
+    }
+  ]
+}

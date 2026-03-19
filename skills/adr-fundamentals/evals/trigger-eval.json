@@ -1,0 +1,29 @@
+{
+  "skill_name": "adr-fundamentals",
+  "trigger_evals": {
+    "should_trigger": [
+      "What is an ADR?",
+      "When should I create an architecture decision record?",
+      "What are ADR best practices?",
+      "How do I document architecture decisions?",
+      "What is the ADR lifecycle?",
+      "Should this decision be an ADR?",
+      "How do ADR statuses work?",
+      "What makes a good architecture decision record?",
+      "When is an ADR overkill versus necessary?",
+      "How should I name and organize my ADR files?"
+    ],
+    "should_not_trigger": [
+      "Create a new ADR for using PostgreSQL",
+      "Review the ADR in docs/adr/0005-use-redis.md for quality issues",
+      "Convert this ADR from Nygard format to MADR format",
+      "Run an ADR compliance audit on the codebase",
+      "Set up ADR linting in our CI pipeline",
+      "Generate an ADR index page from existing records",
+      "What is the MADR template structure?",
+      "Help me write the decision drivers section for my ADR",
+      "How do I set up adr-tools?",
+      "Deploy our documentation site with the latest ADRs"
+    ]
+  }
+}

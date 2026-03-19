@@ -1,0 +1,29 @@
+{
+  "skill_name": "adr-integration",
+  "trigger_evals": {
+    "should_trigger": [
+      "How do I integrate ADRs with our CI/CD pipeline?",
+      "Set up GitHub Actions to validate ADR format on PRs",
+      "I want to export ADRs to JSON for our internal tooling",
+      "How can I add ADRs to our MkDocs documentation site?",
+      "What's the best way to automate ADR index generation?",
+      "Help me create a pre-commit hook for ADR linting",
+      "How do I reference ADRs in git commits and branch names?",
+      "I need to sync ADRs to our Confluence wiki automatically",
+      "Can I generate PDF exports of our ADRs for auditing?",
+      "Set up ADR notifications in Slack when a new one is proposed"
+    ],
+    "should_not_trigger": [
+      "Create a new ADR for choosing a database",
+      "What is an ADR and why should I use one?",
+      "Review ADR-0015 for compliance with our standards",
+      "Help me write the Context section of my ADR",
+      "What ADR template format should I use for this decision?",
+      "List all deprecated ADRs in the project",
+      "How do I supersede an existing ADR?",
+      "Explain the difference between MADR and Nygard formats",
+      "Check if our codebase complies with accepted ADRs",
+      "Help me decide between PostgreSQL and MongoDB for our backend"
+    ]
+  }
+}

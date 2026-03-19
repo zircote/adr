@@ -1,0 +1,27 @@
+{
+  "skill_name": "adr-format-y-statement",
+  "should_trigger": [
+    "Write an ADR using Y-statement format",
+    "What is the Y-statement format for ADRs?",
+    "Create a concise ADR for choosing Redis as our cache",
+    "How do I write a one-sentence ADR?",
+    "Tell me about Olaf Zimmermann's ADR format",
+    "I need a Y-statement ADR for our database decision",
+    "Convert my decision into Y-statement format",
+    "Show me the Y-statement template",
+    "What's the difference between basic and extended Y-statement?",
+    "Help me write a concise ADR using the Y-statement structure"
+  ],
+  "should_not_trigger": [
+    "Write an ADR using the MADR format",
+    "How do I use the Nygard ADR template?",
+    "What is an architecture decision record?",
+    "Create a detailed ADR with full pros and cons analysis",
+    "Help me set up an ADR repository",
+    "List all ADR formats available",
+    "Write a business case document for our project",
+    "How do I number ADRs in my project?",
+    "What tools exist for managing ADRs?",
+    "Create a meeting notes template"
+  ]
+}

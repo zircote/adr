@@ -1,0 +1,29 @@
+{
+  "skill_name": "adr-format-tyree-akerman",
+  "trigger_evals": {
+    "should_trigger": [
+      "Create an ADR using the Tyree-Akerman format",
+      "I need a comprehensive ADR for our enterprise architecture decision",
+      "Write a formal ADR template with full traceability sections",
+      "How do I use the Tyree-Akerman ADR template?",
+      "Show me the sophisticated ADR format with RACI metadata",
+      "We need an enterprise ADR with assumptions, constraints, and positions documented",
+      "What is the Tyree-Akerman format for architecture decisions?",
+      "Create a formal ADR with decision makers, consulted, and informed roles listed",
+      "I need a comprehensive architecture decision record with full governance metadata",
+      "Generate an ADR using the format from Tyree and Akerman's paper"
+    ],
+    "should_not_trigger": [
+      "Create a simple ADR using the Nygard format",
+      "Write a lightweight decision record for our team",
+      "How do I use MADR for my project?",
+      "What is an architecture decision record?",
+      "List all ADR formats available",
+      "Create a quick ADR with just status, context, and decision",
+      "Help me write a Y-statement for my decision",
+      "What is the difference between RFC and ADR?",
+      "Set up an ADR directory structure for my project",
+      "How do I number my ADRs?"
+    ]
+  }
+}

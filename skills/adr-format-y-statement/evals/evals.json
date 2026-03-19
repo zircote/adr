@@ -1,0 +1,106 @@
+{
+  "skill_name": "adr-format-y-statement",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write an ADR using the Y-statement format for choosing PostgreSQL as our database for a new e-commerce platform.",
+      "expected_output": "A complete Y-statement ADR with the standard template structure including title, date, status, and the Y-statement decision sentence with all placeholders filled in for a PostgreSQL database decision.",
+      "files": [],
+      "expectations": [
+        "Output contains the Y-statement structure: 'In the context of ... facing ... we decided for ... and against ... to achieve ... accepting ...'",
+        "The decision section names PostgreSQL as the chosen option",
+        "At least one rejected alternative database is explicitly named (not just 'other options')",
+        "The output includes a Status section with a valid status value",
+        "A trade-off or downside of choosing PostgreSQL is stated in the 'accepting' clause",
+        "The output includes markdown heading structure with at least a title and Decision section"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "What is the Y-statement format for ADRs? Can you explain its structure?",
+      "expected_output": "An explanation of the Y-statement format developed by Olaf Zimmermann, including the sentence template with all six placeholders (context, concern, option, other options, quality, trade-off).",
+      "files": [],
+      "expectations": [
+        "Mentions Olaf Zimmermann as the creator of the Y-statement format",
+        "Presents the Y-statement template with all six clause types: context, concern, chosen option, rejected options, quality goal, and trade-off",
+        "Describes the format as concise or single-sentence",
+        "Differentiates between the basic and extended Y-statement (the extended adds a 'because' clause)"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Create a Y-statement ADR for deciding to use a microservices architecture. Use the extended format with the 'because' clause.",
+      "expected_output": "A Y-statement ADR that uses the extended format including the 'because' clause for additional rationale, covering a microservices architecture decision.",
+      "files": [],
+      "expectations": [
+        "The Y-statement includes a 'because' clause at the end providing additional rationale",
+        "The decision names microservices as the chosen option",
+        "At least one alternative architecture (e.g., monolith) is named as rejected",
+        "The statement follows the extended template: context, concern, decided for, against, to achieve, accepting, because",
+        "The output includes a Consequences section or explicit mention of positive and negative outcomes"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "I have a complex decision involving migrating from on-premise to cloud with multiple stakeholders and detailed cost analysis. Should I use the Y-statement format?",
+      "expected_output": "Guidance that the Y-statement format may not be the best fit for complex decisions requiring detailed analysis, with recommendations for when Y-statement is appropriate versus when other formats like MADR should be considered.",
+      "files": [],
+      "expectations": [
+        "Acknowledges that Y-statement is best for simpler, clear-cut decisions",
+        "Suggests that complex multi-option analysis may benefit from a different format (e.g., MADR or Nygard)",
+        "Does not refuse to help entirely but provides honest guidance about format suitability",
+        "Mentions at least one specific limitation of Y-statement for complex decisions (e.g., no detailed pros/cons section, brevity insufficient for nuanced reasoning)"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Convert this decision into a Y-statement: We chose React for our frontend because it has a large ecosystem, but we also considered Vue and Angular. We needed good component reusability for our dashboard application. The downside is the steep learning curve for junior developers.",
+      "expected_output": "A properly formatted Y-statement ADR that restructures the given information into the standard Y-statement sentence structure.",
+      "files": [],
+      "expectations": [
+        "Restructures the input into the 'In the context of ... facing ... we decided for ... and against ... to achieve ... accepting ...' format",
+        "Names React as the chosen option in the 'decided for' clause",
+        "Names Vue and Angular in the 'and against' clause",
+        "Mentions component reusability or dashboard context in the 'context' or 'to achieve' clause",
+        "Includes the steep learning curve or junior developer concern in the 'accepting' clause"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Show me a comparison between Y-statement and other ADR formats. When should I pick each one?",
+      "expected_output": "A comparison of Y-statement with other ADR formats (Nygard, MADR) including guidance on when each format is most appropriate.",
+      "files": [],
+      "expectations": [
+        "Compares Y-statement with at least Nygard and MADR formats",
+        "Describes Y-statement as the most concise format (approximately one sentence)",
+        "Provides specific use-case guidance for when to choose Y-statement over other formats",
+        "Mentions length or verbosity differences between the formats (e.g., Y-statement ~1 sentence vs MADR 1-2 pages)"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Write a Y-statement ADR but I only know we chose Kubernetes. I don't know what alternatives we considered or what the trade-offs are yet.",
+      "expected_output": "Either a Y-statement with placeholder guidance for the missing parts, or coaching on how to fill in the missing elements, demonstrating the fill-in guide approach.",
+      "files": [],
+      "expectations": [
+        "Does not fabricate specific alternatives or trade-offs without indicating they are examples or suggestions",
+        "Provides the Y-statement structure with Kubernetes as the chosen option",
+        "Guides the user on what kind of information belongs in the missing clauses (alternatives, quality goals, trade-offs)",
+        "References or applies the fill-in guide concept from the skill (placeholder descriptions for each clause)"
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Help me fix this Y-statement, it feels wrong: 'In the context of our system, we decided for a good option to achieve better performance.'",
+      "expected_output": "Identifies the common mistakes in the Y-statement (vague context, missing alternatives, unclear quality, hidden trade-offs) and provides a corrected version with specific guidance.",
+      "files": [],
+      "expectations": [
+        "Identifies 'our system' as too vague for the context clause",
+        "Points out that no rejected alternatives are named (missing 'and against' clause)",
+        "Flags 'better performance' as an unclear or unmeasurable quality goal",
+        "Notes the missing 'accepting' clause for trade-offs",
+        "Provides a corrected or improved version of the Y-statement with more specific placeholders or examples"
+      ]
+    }
+  ]
+}

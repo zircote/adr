@@ -1,0 +1,27 @@
+{
+  "skill_name": "adr-format-madr",
+  "should_trigger": [
+    "How do I write an ADR in MADR format?",
+    "Create a MADR for choosing our database",
+    "What's the MADR 4.0 template look like?",
+    "Show me the MADR template sections",
+    "I need to write a Markdown Architectural Decision Record",
+    "What sections does a MADR have?",
+    "Convert this decision into MADR format",
+    "Help me fill out a MADR template",
+    "What's the difference between full and minimal MADR?",
+    "How should I format the pros and cons section in a MADR?"
+  ],
+  "should_not_trigger": [
+    "How do I set up a CI/CD pipeline?",
+    "Write a README for my project",
+    "What is Docker and how do I use it?",
+    "Create a Nygard-style ADR for our decision",
+    "Help me write a Y-Statement ADR",
+    "What are the best practices for code reviews?",
+    "How do I configure ESLint for my project?",
+    "Write unit tests for my authentication module",
+    "What is the difference between TCP and UDP?",
+    "Help me design a REST API schema"
+  ]
+}

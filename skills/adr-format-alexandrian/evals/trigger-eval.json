@@ -1,0 +1,29 @@
+{
+  "skill_name": "adr-format-alexandrian",
+  "trigger_evals": {
+    "should_trigger": [
+      "Create an ADR using the Alexandrian format",
+      "What is the Alexandrian ADR format?",
+      "I want a pattern-based ADR for our database choice",
+      "Show me the Alexandrian ADR template",
+      "Write a forces-based ADR for choosing a message queue",
+      "How do I write an ADR in Christopher Alexander style?",
+      "Can you help me document forces for an architecture decision?",
+      "I need an ADR that follows the pattern language approach",
+      "Convert my ADR to Alexandrian format with forces and resulting context",
+      "What sections does an Alexandrian ADR have?"
+    ],
+    "should_not_trigger": [
+      "Create a simple ADR for using TypeScript",
+      "Write an ADR in Nygard format",
+      "What is an ADR?",
+      "Help me write a MADR decision record",
+      "Create a Y-statement ADR",
+      "List all our architecture decisions",
+      "What database should I use for my project?",
+      "Explain the difference between SQL and NoSQL",
+      "Write documentation for our API",
+      "Help me set up a new Node.js project"
+    ]
+  }
+}

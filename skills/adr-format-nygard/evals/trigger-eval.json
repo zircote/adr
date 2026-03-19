@@ -1,0 +1,29 @@
+{
+  "skill_name": "adr-format-nygard",
+  "trigger_evals": {
+    "should_trigger": [
+      "Create an ADR using the Nygard format",
+      "Show me the classic ADR template",
+      "What is the Nygard ADR format?",
+      "Write an ADR in Michael Nygard's format for our database decision",
+      "I need a simple ADR template",
+      "How do I write an ADR in the original format?",
+      "Can you explain the Nygard format sections?",
+      "Give me a Nygard ADR example for choosing a message queue",
+      "What's the classic ADR format with context, decision, and consequences?",
+      "Help me create a Nygard-style architecture decision record"
+    ],
+    "should_not_trigger": [
+      "Create an ADR using MADR format",
+      "Write an ADR with the Y-Statement format",
+      "How do I set up an ADR repository?",
+      "What is an architecture decision record?",
+      "Show me the Alexandrian ADR pattern",
+      "How do I review an ADR for quality?",
+      "List all ADR formats available",
+      "What tools can I use to manage ADRs?",
+      "How do I link ADRs together?",
+      "Explain the ADR lifecycle and status transitions"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "skill_name": "adr-quality",
+  "trigger_evals": {
+    "should_trigger": [
+      "How do I review an ADR for quality?",
+      "Is this ADR good enough? It only has two sentences in the context.",
+      "Give me an ADR quality checklist",
+      "What makes a good ADR?",
+      "Help me improve this ADR, the consequences section feels weak",
+      "Can you validate my ADR against best practices?",
+      "What are examples of good ADR titles versus bad ones?",
+      "Our ADRs are getting stale, how do we maintain quality?",
+      "Review my ADR and tell me what's missing",
+      "What are common ADR anti-patterns to avoid?"
+    ],
+    "should_not_trigger": [
+      "Create a new ADR for choosing a message queue",
+      "What is an ADR and why should we use them?",
+      "List all our accepted ADRs",
+      "Change the status of ADR-005 to deprecated",
+      "How do I format an ADR using the MADR template?",
+      "What decision drivers should I consider for a database choice?",
+      "Show me the ADR lifecycle stages",
+      "Check if our codebase complies with ADR-012",
+      "Generate an ADR index page",
+      "Help me link related ADRs together"
+    ]
+  }
+}

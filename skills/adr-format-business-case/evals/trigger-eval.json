@@ -1,0 +1,29 @@
+{
+  "skill_name": "adr-format-business-case",
+  "trigger_evals": {
+    "should_trigger": [
+      "Create a business case ADR for migrating to the cloud",
+      "I need an MBA-style ADR for our vendor selection",
+      "Write a cost-benefit ADR for the new hiring plan",
+      "Help me create a SWOT ADR for the database migration",
+      "I need an executive ADR with stakeholder sign-off for the platform rewrite",
+      "Create an ROI ADR for switching from Oracle to PostgreSQL",
+      "Write an ADR with financial analysis for the build vs buy decision",
+      "I need a business case format ADR for our compliance initiative",
+      "Create an executive-level ADR with cost-benefit analysis for the new data center",
+      "Help me draft a formal ADR with SWOT analysis for entering the European market"
+    ],
+    "should_not_trigger": [
+      "Create a simple ADR for choosing between React and Vue",
+      "Write a lightweight decision record for our coding standards",
+      "Document our choice of testing framework in an ADR",
+      "Create a Nygard-style ADR for the API versioning approach",
+      "Help me write an ADR using the MADR format",
+      "I need a quick ADR for switching from npm to pnpm",
+      "Write a technical ADR for our logging strategy",
+      "Create an ADR for the team about our Git branching model",
+      "What ADR formats are available?",
+      "How do I set up the ADR tool in my project?"
+    ]
+  }
+}

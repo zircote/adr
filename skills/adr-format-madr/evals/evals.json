@@ -1,0 +1,108 @@
+{
+  "skill_name": "adr-format-madr",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create a full MADR for choosing between Kubernetes, Docker Swarm, and ECS for our container orchestration platform. We need high availability and the team knows Docker well.",
+      "expected_output": "A complete MADR document using the full template with all sections filled in, comparing the three container orchestration options.",
+      "files": [],
+      "expectations": [
+        "Output contains an H1 title as a short noun phrase about container orchestration",
+        "Output contains a Status section with a valid status value (proposed, accepted, deprecated, or superseded)",
+        "Output contains a Context and Problem Statement section describing the orchestration need",
+        "Output contains a Considered Options section listing Kubernetes, Docker Swarm, and ECS",
+        "Output contains a Decision Outcome section with the format 'Chosen option: \"{option}\"' and a because clause",
+        "Output contains a Pros and Cons of the Options section with subsections for each option using Good/Bad/Neutral markers"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I need a minimal MADR. We decided to use Python over Go for our CLI tool because our team already knows Python.",
+      "expected_output": "A minimal MADR with only the four required sections: Title, Status, Context and Problem Statement, and Decision Outcome.",
+      "files": [],
+      "expectations": [
+        "Output contains an H1 title about choosing Python for the CLI tool",
+        "Output contains a Status section",
+        "Output contains a Context and Problem Statement section",
+        "Output contains a Decision Outcome section referencing Python as the chosen option",
+        "Output does NOT contain a Decision Drivers section or Considered Options section or Pros and Cons of the Options section"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "What sections are required vs optional in the MADR format?",
+      "expected_output": "A clear explanation distinguishing required sections (Title, Status, Context and Problem Statement, Decision Outcome) from optional sections (Decision Drivers, Considered Options, Consequences, Confirmation, Pros and Cons, More Information).",
+      "files": [],
+      "expectations": [
+        "Response identifies Title, Status, Context and Problem Statement, and Decision Outcome as required",
+        "Response identifies Decision Drivers and Considered Options as optional",
+        "Response identifies Consequences, Confirmation, and Pros and Cons of the Options as optional",
+        "Response mentions or distinguishes between full and minimal template variants"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Write a MADR for adopting event-driven architecture. The decision has been superseded by ADR-0012. Include decision drivers and consequences.",
+      "expected_output": "A MADR document with status set to superseded referencing ADR-0012, including Decision Drivers and Consequences sections.",
+      "files": [],
+      "expectations": [
+        "Output contains a Status section with 'superseded' as the status value",
+        "Output references ADR-0012 in the Status section or nearby metadata",
+        "Output contains a Decision Drivers section with a bullet list of drivers",
+        "Output contains a Consequences section with items using 'Good, because' and 'Bad, because' format",
+        "Output contains a Decision Outcome section with 'Chosen option:' format"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "How does MADR compare to the Nygard ADR format? When should I use each?",
+      "expected_output": "A comparison explaining MADR's focus on options comparison versus Nygard's simpler decision recording, with guidance on when each is appropriate.",
+      "files": [],
+      "expectations": [
+        "Response explains that MADR focuses on options comparison with detailed pros/cons",
+        "Response explains that Nygard format is shorter and focused on decision recording",
+        "Response provides guidance on when to use MADR vs Nygard based on decision complexity",
+        "Response mentions MADR version 4.0 or 4.0.0"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "I have this ADR but it doesn't follow MADR format. Can you convert it?\n\nTitle: We picked React\nWe needed a frontend framework. We looked at React, Vue, and Angular. We went with React because the team knows it.\nPros: big ecosystem. Cons: JSX learning curve.",
+      "expected_output": "A properly formatted MADR document restructuring the informal ADR into correct MADR sections with proper headings and formatting.",
+      "files": [],
+      "expectations": [
+        "Output has an H1 title as a descriptive noun phrase (not just 'We picked React')",
+        "Output contains a properly formatted Status section",
+        "Output contains a Context and Problem Statement section with the frontend framework need",
+        "Output contains a Considered Options section listing React, Vue, and Angular as bullet items",
+        "Output contains a Decision Outcome section with 'Chosen option: \"React\"' format",
+        "Output uses the 'Good, because' and 'Bad, because' pattern for consequences or pros/cons"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "What's the correct format for the Decision Outcome section in a MADR? Can you show me an example?",
+      "expected_output": "An explanation of the Decision Outcome format with the 'Chosen option: \"{title}\", because {justification}' pattern and at least one concrete example.",
+      "files": [],
+      "expectations": [
+        "Response shows the pattern: Chosen option: \"{option title}\", because {justification}",
+        "Response includes at least one concrete example of a Decision Outcome section",
+        "Response mentions that the section is required in both full and minimal templates",
+        "Response uses proper markdown heading format (## Decision Outcome)"
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Create a MADR with a detailed Pros and Cons section comparing Redis, Memcached, and Hazelcast for our caching layer. We need sub-millisecond latency and data persistence.",
+      "expected_output": "A MADR with emphasis on a detailed Pros and Cons of the Options section, with each option getting its own H3 subsection containing Good/Bad/Neutral bullet points.",
+      "files": [],
+      "expectations": [
+        "Output contains a '## Pros and Cons of the Options' section",
+        "Each of the three options (Redis, Memcached, Hazelcast) has its own H3 subsection under Pros and Cons",
+        "Each option subsection contains bullet points using 'Good, because', 'Bad, because', or 'Neutral, because' format",
+        "The analysis addresses the stated requirements: sub-millisecond latency and data persistence",
+        "Output contains a Decision Outcome section selecting one of the three options"
+      ]
+    }
+  ]
+}

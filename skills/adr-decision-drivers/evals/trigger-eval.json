@@ -1,0 +1,29 @@
+{
+  "skill_name": "adr-decision-drivers",
+  "trigger_evals": {
+    "should_trigger": [
+      "What are decision drivers for an ADR?",
+      "Help me identify the architectural forces for our database decision",
+      "How do I document quality attributes in my ADR?",
+      "What non-functional requirements should I consider for this architecture decision?",
+      "How do I identify trade-offs between performance and maintainability?",
+      "I need to weigh competing concerns for our API gateway selection",
+      "What factors should drive our build vs buy decision?",
+      "How do I prioritize the forces influencing our architecture choice?",
+      "Can you help me list the decision drivers for choosing between monolith and microservices?",
+      "What quality attributes matter for a high-availability system ADR?"
+    ],
+    "should_not_trigger": [
+      "How do I install adr-tools?",
+      "Write a Python function to sort a list",
+      "What is the MADR template format?",
+      "Review this pull request for me",
+      "How do I supersede an existing ADR?",
+      "What is the ADR lifecycle?",
+      "Help me set up a CI/CD pipeline",
+      "How do I audit code compliance against an ADR?",
+      "Generate a changelog for our release",
+      "What are the best practices for Git commit messages?"
+    ]
+  }
+}

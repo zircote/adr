@@ -1,0 +1,27 @@
+{
+  "skill_name": "adr-format-structured-madr",
+  "should_trigger": [
+    "Create a structured MADR for our database selection decision",
+    "How do I write a structured-madr document?",
+    "I need a frontmatter ADR for choosing our deployment platform",
+    "What's the structured MADR template look like?",
+    "Write a comprehensive ADR with audit section for our API versioning decision",
+    "Convert this ADR to structured MADR format with YAML frontmatter",
+    "What fields go in the frontmatter of a structured MADR?",
+    "Create an auditable ADR for choosing between Kafka and RabbitMQ",
+    "How do I add an audit section to a structured MADR?",
+    "Generate a structured MADR with risk assessments for each option"
+  ],
+  "should_not_trigger": [
+    "Create a simple ADR for choosing React",
+    "Write an ADR in Nygard format",
+    "What is an architectural decision record?",
+    "How do I set up an ADR directory structure?",
+    "Write a standard MADR for our logging decision",
+    "What are good decision drivers for a database choice?",
+    "Review the quality of this ADR",
+    "How do I deprecate an ADR?",
+    "Run a compliance audit on our ADRs against the codebase",
+    "List all ADRs in the project"
+  ]
+}

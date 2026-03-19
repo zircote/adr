@@ -1,0 +1,105 @@
+{
+  "skill_name": "adr-integration",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I want to set up a GitHub Actions workflow that validates ADR format on pull requests. Can you help?",
+      "expected_output": "A GitHub Actions workflow YAML configuration that triggers on PRs touching docs/adr/**, validates required sections (Status, Context, Decision), and uses actions/checkout@v4.",
+      "files": [],
+      "expectations": [
+        "Output contains a GitHub Actions YAML workflow with 'on: pull_request' trigger",
+        "Workflow includes path filter for 'docs/adr/**'",
+        "Validation checks for required ADR sections: Status, Context, and Decision",
+        "Uses actions/checkout@v4 step",
+        "Includes error reporting mechanism (e.g., '::error' annotations or exit codes)"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "How do I export my ADRs to JSON for use with other tooling?",
+      "expected_output": "Guidance on JSON export including the JSON schema structure with metadata, adrs array, and statistics, plus a shell script for generating the export.",
+      "files": [],
+      "expectations": [
+        "Shows JSON structure with top-level 'metadata' and 'adrs' fields",
+        "ADR entries in JSON include at minimum id, title, status, and file fields",
+        "Includes or references a bash script for generating the JSON export",
+        "Mentions or shows the export schema with status enum values (proposed, accepted, deprecated, superseded, rejected)",
+        "Does not confuse JSON export with HTML or PDF export formats"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "We use GitLab CI, not GitHub Actions. How can I integrate ADR validation into our pipeline?",
+      "expected_output": "A GitLab CI pipeline configuration with stages for validation, compliance, and publishing, using rules with changes filter on docs/adr/**.",
+      "files": [],
+      "expectations": [
+        "Provides GitLab CI YAML configuration (not GitHub Actions)",
+        "Uses 'rules' with 'changes' filter targeting docs/adr/**",
+        "Defines pipeline stages (e.g., validate, compliance, publish)",
+        "Includes script blocks for ADR validation (checking for required sections)"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "I need to integrate ADRs into our MkDocs documentation site. What's the recommended approach?",
+      "expected_output": "MkDocs configuration showing how to add ADR navigation entries and use plugins for ADR integration.",
+      "files": [],
+      "expectations": [
+        "Shows mkdocs.yml configuration with nav entries for ADRs under an Architecture section",
+        "References the search plugin or macros plugin for ADR integration",
+        "Mentions or shows the architecture/adr/README.md path in navigation",
+        "Does not confuse MkDocs with Docusaurus or Sphinx configuration"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "How should I reference ADRs in git commits and pull requests?",
+      "expected_output": "Guidance on commit message conventions referencing ADRs, branch naming with ADR references, and PR template with ADR compliance checklist.",
+      "files": [],
+      "expectations": [
+        "Shows commit message format referencing ADRs (e.g., 'Implements ADR-0012')",
+        "Includes branch naming convention with ADR reference (e.g., 'feature/adr-0012-*')",
+        "Provides a PR template with ADR-related checkboxes for compliance",
+        "PR template includes checks for both implementing existing ADRs and proposing new ones"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "I want to auto-generate an ADR index README whenever ADRs change. Can you show me the automation script?",
+      "expected_output": "A bash script that iterates over ADR files, extracts metadata (ID, title, status), and generates a formatted README.md with a markdown table index.",
+      "files": [],
+      "expectations": [
+        "Provides a bash script that iterates over docs/adr/[0-9]*.md files",
+        "Extracts ADR ID, title, and status from each file",
+        "Generates a markdown table with columns for ID, Title, Status",
+        "Output is written to a README.md or index file",
+        "Script uses configurable ADR_PATH variable (defaulting to docs/adr)"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "We need to generate PDFs of our ADRs for compliance audit documentation. What are the options?",
+      "expected_output": "Guidance on PDF export including Pandoc commands and LaTeX template options for generating professional ADR PDFs.",
+      "files": [],
+      "expectations": [
+        "Mentions Pandoc as a tool for converting ADR markdown to PDF",
+        "Shows a pandoc command with relevant flags (--toc, --pdf-engine, etc.)",
+        "References or shows a LaTeX template option for formatted output",
+        "Mentions use cases: stakeholder presentations, audit documentation, compliance records",
+        "Does not confuse PDF export with HTML or JSON export"
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "How do I set up pre-commit hooks to lint ADRs before they get committed?",
+      "expected_output": "A pre-commit hook configuration that runs ADR linting on markdown files matching the ADR path pattern.",
+      "files": [],
+      "expectations": [
+        "Shows .pre-commit-config.yaml configuration",
+        "Hook targets files matching docs/adr pattern (e.g., ^docs/adr/.*\\.md$)",
+        "References a linting script (e.g., ./scripts/lint-adr.sh)",
+        "Hook is configured with language: script"
+      ]
+    }
+  ]
+}

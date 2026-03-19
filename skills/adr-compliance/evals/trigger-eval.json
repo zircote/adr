@@ -1,0 +1,29 @@
+{
+  "skill_name": "adr-compliance",
+  "triggers": {
+    "should_trigger": [
+      "How do I check ADR compliance in our codebase?",
+      "Run an architecture compliance audit on our project",
+      "Are there any ADR violations in our code?",
+      "How do I enforce ADRs automatically?",
+      "Check our code against our accepted architectural decisions",
+      "I need to audit our services for ADR compliance",
+      "How do I set up ADR compliance checks in CI/CD?",
+      "Generate an ADR compliance report",
+      "What tools can detect architecture violations?",
+      "How do I track and remediate ADR violations?"
+    ],
+    "should_not_trigger": [
+      "Create a new ADR for using PostgreSQL",
+      "What is an ADR?",
+      "Help me write an architecture decision record",
+      "List all our ADRs",
+      "How do I supersede an existing ADR?",
+      "What template should I use for ADRs?",
+      "Review this ADR for quality",
+      "How do I organize ADR files in a repository?",
+      "What is the MADR format?",
+      "Help me set up an ADR directory structure"
+    ]
+  }
+}

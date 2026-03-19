@@ -1,0 +1,109 @@
+{
+  "skill_name": "adr-compliance",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "How do I check if our codebase is actually following our ADRs? We have ADR-003 that says use PostgreSQL but I suspect some services still use MySQL.",
+      "expected_output": "Guidance on checking technology selection compliance with grep patterns for detecting PostgreSQL usage and MySQL violations, plus a structured approach to reporting findings.",
+      "files": [],
+      "expectations": [
+        "Provides grep or code search patterns to detect MySQL imports/usage as violations",
+        "Provides grep or code search patterns to verify PostgreSQL usage as compliance",
+        "Mentions checking import statements, require statements, or dependency files",
+        "Recommends documenting violations with file locations and severity levels",
+        "Suggests a remediation path such as migrating the offending code to PostgreSQL"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I need to set up automated ADR compliance checks in our CI/CD pipeline. We use GitHub Actions. What should I do?",
+      "expected_output": "A GitHub Actions workflow configuration that runs compliance checks on PRs and pushes, with steps for pattern checking and report generation.",
+      "files": [],
+      "expectations": [
+        "Provides a GitHub Actions YAML workflow or describes one with on triggers for pull_request or push",
+        "Includes steps that perform grep-based or tool-based compliance checks against code",
+        "Mentions generating a compliance report or step summary",
+        "Addresses what happens on failure such as blocking the merge or creating an issue",
+        "References connecting checks back to specific ADR identifiers"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Generate an ADR compliance report for our project. We have three accepted ADRs: use Redis for caching, all APIs must require authentication, and controllers must not access repositories directly.",
+      "expected_output": "A structured compliance report template covering all three ADRs with status, violation details, severity, and recommendations.",
+      "files": [],
+      "expectations": [
+        "Produces a report with a summary table showing compliance status per ADR",
+        "Includes severity levels such as Critical, High, Medium, or Low for violations",
+        "Provides specific file location patterns or grep commands to check each of the three ADRs",
+        "Covers the Redis caching ADR with checks for alternative cache libraries as violations",
+        "Covers the authentication ADR with checks for unprotected endpoints",
+        "Covers the layer boundary ADR with checks for repository imports in controller files"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Not all of our ADRs can be checked automatically. How do I figure out which ones can be enforced with tooling versus which need manual review?",
+      "expected_output": "A classification framework for ADR enforceability, distinguishing technology choices and code patterns (automatable) from process and organizational decisions (manual review).",
+      "files": [],
+      "expectations": [
+        "Distinguishes between automatable ADR types such as technology choice and pattern adoption versus manual review types such as process and organizational decisions",
+        "Provides concrete examples of each category",
+        "Mentions constraint ADRs as a category that can be checked via code analysis",
+        "Suggests defining compliance criteria for each enforceable ADR including what patterns indicate compliance and what patterns indicate violations",
+        "Does not claim all ADRs can be fully automated"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "We found 15 ADR violations in our last audit. How should we prioritize and track remediation?",
+      "expected_output": "A severity-based prioritization framework with tracking recommendations and a remediation workflow.",
+      "files": [],
+      "expectations": [
+        "Defines severity levels with criteria such as Critical for security risk and High for architectural violation",
+        "Recommends different response timeframes based on severity such as immediate fix versus next sprint versus planned cleanup",
+        "Suggests tracking violations in a backlog tagged with ADR references",
+        "Mentions monitoring violation trends over time",
+        "Recommends a gradual enforcement approach or phased remediation"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "How do I handle legacy code that legitimately can't comply with a new ADR right away? We adopted event-driven architecture but half our services still make direct synchronous calls.",
+      "expected_output": "Guidance on exemption processes, gradual enforcement phases, and tracking legacy violations as intentional technical debt.",
+      "files": [],
+      "expectations": [
+        "Describes an exemption or ignore mechanism for legacy code such as a compliance-ignore file with expiry dates",
+        "Recommends a phased enforcement approach starting with warnings before blocking",
+        "Suggests documenting deviations as intentional and tracked rather than hidden",
+        "Provides specific patterns to detect direct synchronous service calls as violations of event-driven architecture",
+        "Does not suggest simply ignoring the violations permanently"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Can you show me how to write architecture tests for a TypeScript project that enforce our ADR about layer boundaries? Services should not import from the UI layer and the domain layer should not depend on infrastructure.",
+      "expected_output": "Code examples using dependency-cruiser or custom test frameworks to enforce layer boundary rules in TypeScript.",
+      "files": [],
+      "expectations": [
+        "Provides dependency-cruiser configuration or similar tooling for TypeScript import path enforcement",
+        "Includes rules that prevent services from importing UI layer modules",
+        "Includes rules that prevent domain from importing infrastructure modules",
+        "Shows how to integrate these checks into a test suite or CI pipeline",
+        "References specific import path patterns to check such as from paths containing ui or infrastructure"
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "What's ADR compliance?",
+      "expected_output": "A clear definition of ADR compliance covering verification that implementation matches decisions, new code follows patterns, deviations are documented, and technical debt is tracked.",
+      "files": [],
+      "expectations": [
+        "Defines ADR compliance as verifying implementation matches documented architectural decisions",
+        "Mentions checking that new code follows accepted patterns",
+        "Mentions that deviations should be intentional and documented",
+        "Describes the compliance workflow at a high level including identifying enforceable ADRs, defining criteria, checking, and reporting"
+      ]
+    }
+  ]
+}
