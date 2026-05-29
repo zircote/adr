@@ -107,6 +107,19 @@
         "Consequences section is split into Positive, Negative, and Neutral subsections",
         "Audit section is appended with Pending status since this is a format conversion"
       ]
+    },
+    {
+      "id": 9,
+      "prompt": "I have these Structured MADR records in docs/adr/. Search them and tell me which ACCEPTED ADRs concern the database, and what those ADRs relate to.\n\n0001-use-postgresql.md frontmatter: title 'Use PostgreSQL', category architecture, tags [database, persistence], status accepted, related [adr_0005.md].\n0005-event-sourcing.md frontmatter: title 'Adopt Event Sourcing', category architecture, tags [database, events], status proposed, related [adr_0001.md].\n0009-design-system.md frontmatter: title 'Adopt a Design System', category ui, tags [frontend, design], status accepted.",
+      "expected_output": "A frontmatter-first triage that filters by status accepted and a database tag/category, names ADR-0001 as the match, excludes the proposed ADR-0005 and the ui ADR-0009, then follows ADR-0001's related link to ADR-0005 and resolves adr_0005.md to the 0005-prefixed file by number.",
+      "files": [],
+      "expectations": [
+        "Identifies ADR-0001 as the accepted database ADR using frontmatter status and tags, without relying on body content",
+        "Excludes ADR-0009 because its category and tags are ui, not database",
+        "Excludes ADR-0005 from the accepted-database set because its status is proposed, not accepted",
+        "Follows ADR-0001's related entry to ADR-0005 (traverses the related decision graph)",
+        "Resolves the related entry adr_0005.md to the 0005-prefixed file by ADR number rather than exact filename"
+      ]
     }
   ]
 }

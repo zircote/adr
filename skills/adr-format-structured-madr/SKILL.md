@@ -347,7 +347,28 @@ cp ${CLAUDE_PLUGIN_ROOT}/templates/structured-madr/adr-template.md docs/adr/adr_
 - Decisions unlikely to need auditing
 - Preference for brevity over comprehensiveness
 
+## Searching Structured MADR Collections
+
+When asked to search, find, or navigate a collection of Structured MADR records,
+do not read every ADR end-to-end. SMADR's required YAML frontmatter is a cheap
+structured index. Use the frontmatter-first, progressive-disclosure protocol:
+
+1. **Index**: extract only the `---` frontmatter from every `docs/adr/[0-9]*.md`
+   into a compact triage table.
+2. **Filter and rank**: narrow by `status`, `category`, `tags`, `technologies`,
+   `audience`, `created`/`updated`, and the `related` cross-reference graph.
+3. **Deep-read**: read full bodies only for the shortlist, then follow `related:`
+   links (resolve by ADR number, not exact filename).
+
+For small collections (fewer than ~10 records) just read each frontmatter block
+directly. See `references/frontmatter-first-search.md` for copy-pasteable recipes.
+
 ## Additional Resources
+
+### Reference Files
+
+- **`references/frontmatter-first-search.md`** - Frontmatter-first progressive-disclosure search for SMADR collections
+- **`references/structured-madr-examples.md`** - Complete Structured MADR examples
 
 ### Templates
 

@@ -82,6 +82,11 @@
       "title": "Structured MADR Examples"
     },
     {
+      "source": "skills/adr-format-structured-madr/references/frontmatter-first-search.md",
+      "output": "references/frontmatter-first-search.mdx",
+      "title": "Frontmatter-First Search"
+    },
+    {
       "source": "skills/adr-fundamentals/references/decision-criteria.md",
       "output": "references/decision-criteria.mdx",
       "title": "Decision Criteria"

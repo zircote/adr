@@ -11,7 +11,10 @@
       "What fields go in the frontmatter of a structured MADR?",
       "Create an auditable ADR for choosing between Kafka and RabbitMQ",
       "How do I add an audit section to a structured MADR?",
-      "Generate a structured MADR with risk assessments for each option"
+      "Generate a structured MADR with risk assessments for each option",
+      "Search my structured MADR collection for accepted database decisions",
+      "Across my structured MADR records, which ones supersede ADR-0003?",
+      "Triage my frontmatter ADRs by status and tags without reading every body"
     ],
     "should_not_trigger": [
       "Create a simple ADR for choosing React",
@@ -23,7 +26,10 @@
       "Review the quality of this ADR",
       "How do I deprecate an ADR?",
       "Run a compliance audit on our ADRs against the codebase",
-      "List all ADRs in the project"
+      "List all ADRs in the project",
+      "Find all accepted ADRs",
+      "Grep my ADRs for the word postgres",
+      "Search the codebase for TODO comments"
     ]
   }
 }
