@@ -87,6 +87,12 @@ Ranking heuristic (mirrors the `adr-search` command): order by status acceptance
 — accepted, then proposed, then deprecated, then superseded — and within a
 status, most-recently `updated` first.
 
+**When reporting triage results, briefly state why each excluded record was
+dropped** — not just which records survived. For example: "excluded 0009
+(category: ui, not database)" or "excluded 0005 (status: proposed, not
+accepted)". One phrase per excluded record is sufficient. This makes the
+filtering logic transparent and auditable.
+
 ### Stage C — Deep-read the shortlist and traverse `related`
 
 Read full bodies **only** for the shortlisted records (Context, Decision,
@@ -128,8 +134,11 @@ To answer "which accepted database decisions do we have, and what do they relate
 to?":
 
 1. **Stage A** builds the triage table from frontmatter alone (no bodies read).
-2. **Stage B** filters `status=accepted` and `tags ~ database` — only
-   `0001-use-postgresql.md` survives (`0005` is proposed; `0009` is ui).
+2. **Stage B** filters `status=accepted` and `tags ~ database`. Report the
+   triage outcome with reasons for each exclusion:
+   - **0001-use-postgresql.md** — included (status: accepted, tags: database)
+   - **0005-event-sourcing.md** — excluded (status: proposed, not accepted)
+   - **0009-design-system.md** — excluded (category: ui, tags: frontend — not database)
 3. **Stage C** reads only `0001`'s body, then resolves its `related: adr_0005.md`
    to `0005-event-sourcing.md` by number and reads that record's body.
 

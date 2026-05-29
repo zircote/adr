@@ -352,6 +352,9 @@ structured index. Use the frontmatter-first, progressive-disclosure protocol:
    into a compact triage table.
 2. **Filter and rank**: narrow by `status`, `category`, `tags`, `technologies`,
    `audience`, `created`/`updated`, and the `related` cross-reference graph.
+   When reporting results, **briefly state why each excluded record was dropped**
+   (e.g. "excluded: category ui, not database" or "excluded: status proposed,
+   not accepted") — not just which records matched.
 3. **Deep-read**: read full bodies only for the shortlist, then follow `related:`
    links (resolve by ADR number, not exact filename).
 

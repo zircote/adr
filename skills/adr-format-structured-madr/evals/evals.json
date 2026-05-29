@@ -3,49 +3,315 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Create a structured MADR for choosing Redis as our caching layer for the payments service. We considered Redis and Memcached. Status is accepted.",
-      "expected_output": "A complete Structured MADR document with YAML frontmatter, all required sections including Context with subsections, hierarchical Decision Drivers, comprehensive option analysis for both Redis and Memcached, split Consequences, and an Audit section.",
+      "prompt": "Create a structured MADR for choosing Redis as our caching layer for the payments service. We considered Redis and Memcached. Status is accepted. Save the ADR to `adr.md`.",
+      "expected_output": "A complete Structured MADR document saved to adr.md with YAML frontmatter, all required sections including Context with subsections, hierarchical Decision Drivers, comprehensive option analysis for both Redis and Memcached, split Consequences, and an Audit section.",
       "files": [],
+      "deterministic_checks": [
+        {
+          "type": "file_exists",
+          "file": "adr.md",
+          "description": "adr.md output file exists"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "type: adr",
+          "description": "frontmatter type field is 'adr'"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "status: accepted",
+          "description": "frontmatter status is 'accepted'"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "title:",
+          "description": "frontmatter has title field"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "description:",
+          "description": "frontmatter has description field"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "category:",
+          "description": "frontmatter has category field"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "tags:",
+          "description": "frontmatter has tags field"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "created:",
+          "description": "frontmatter has created date"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "updated:",
+          "description": "frontmatter has updated date"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "author:",
+          "description": "frontmatter has author field"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "project:",
+          "description": "frontmatter has project field"
+        },
+        {
+          "type": "regex_match",
+          "file": "adr.md",
+          "pattern": "(?m)^# ADR-\\d+:",
+          "description": "H1 title follows ADR-{NUMBER}: format"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "### Primary Decision Drivers",
+          "description": "Primary Decision Drivers subsection is present"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "### Secondary Decision Drivers",
+          "description": "Secondary Decision Drivers subsection is present"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "### Positive",
+          "description": "Consequences split includes Positive subsection"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "### Negative",
+          "description": "Consequences split includes Negative subsection"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "### Neutral",
+          "description": "Consequences split includes Neutral subsection"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "## Audit",
+          "description": "Audit section is present"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "### Background and Problem Statement",
+          "description": "Context contains Background and Problem Statement subsection"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "### Current Limitations",
+          "description": "Context contains Current Limitations subsection"
+        }
+      ],
       "expectations": [
-        "Output contains YAML frontmatter delimited by --- with at minimum: title, description, type: adr, category, tags, status: accepted, created, updated, author, and project fields",
-        "H1 title follows the format ADR-{NUMBER}: with a descriptive title about Redis/caching",
-        "Context section contains both a 'Background and Problem Statement' subsection and a 'Current Limitations' subsection",
-        "Decision Drivers section contains both 'Primary Decision Drivers' and 'Secondary Decision Drivers' subsections",
         "Both Redis and Memcached options include Description, Advantages, Disadvantages, and Risk Assessment with Technical/Schedule/Ecosystem risk levels",
-        "Consequences section is split into Positive, Negative, and Neutral subsections",
-        "An Audit section is present with Status set to Pending or a date-stamped entry"
+        "The Audit section has status Pending or a date-stamped entry (not already marked Compliant since this is a new ADR)",
+        "The Risk Assessment language is plausible for a caching layer comparison (e.g. Redis ecosystem risk rated low due to wide adoption)"
       ]
     },
     {
       "id": 2,
-      "prompt": "What fields are required in the frontmatter for a structured MADR?",
-      "expected_output": "A list of all required YAML frontmatter fields with descriptions of each.",
+      "prompt": "What fields are required in the frontmatter for a structured MADR? Write your answer to `fields.md`.",
+      "expected_output": "A list of all required YAML frontmatter fields with descriptions of each, saved to fields.md.",
       "files": [],
+      "deterministic_checks": [
+        {
+          "type": "file_exists",
+          "file": "fields.md",
+          "description": "fields.md output file exists"
+        },
+        {
+          "type": "file_contains",
+          "file": "fields.md",
+          "literal": "title",
+          "description": "answer mentions title field"
+        },
+        {
+          "type": "file_contains",
+          "file": "fields.md",
+          "literal": "description",
+          "description": "answer mentions description field"
+        },
+        {
+          "type": "file_contains",
+          "file": "fields.md",
+          "literal": "type",
+          "description": "answer mentions type field"
+        },
+        {
+          "type": "file_contains",
+          "file": "fields.md",
+          "literal": "category",
+          "description": "answer mentions category field"
+        },
+        {
+          "type": "file_contains",
+          "file": "fields.md",
+          "literal": "tags",
+          "description": "answer mentions tags field"
+        },
+        {
+          "type": "file_contains",
+          "file": "fields.md",
+          "literal": "status",
+          "description": "answer mentions status field"
+        },
+        {
+          "type": "file_contains",
+          "file": "fields.md",
+          "literal": "created",
+          "description": "answer mentions created field"
+        },
+        {
+          "type": "file_contains",
+          "file": "fields.md",
+          "literal": "updated",
+          "description": "answer mentions updated field"
+        },
+        {
+          "type": "file_contains",
+          "file": "fields.md",
+          "literal": "author",
+          "description": "answer mentions author field"
+        },
+        {
+          "type": "file_contains",
+          "file": "fields.md",
+          "literal": "project",
+          "description": "answer mentions project field"
+        },
+        {
+          "type": "file_contains",
+          "file": "fields.md",
+          "literal": "adr",
+          "description": "answer notes type must be 'adr'"
+        },
+        {
+          "type": "file_contains",
+          "file": "fields.md",
+          "literal": "YYYY-MM-DD",
+          "description": "answer mentions YYYY-MM-DD date format"
+        }
+      ],
       "expectations": [
-        "Lists title, description, type, category, tags, status, created, updated, author, and project as required fields",
-        "Mentions that type must always be 'adr'",
-        "Identifies technologies, audience, and related as optional fields",
-        "Mentions that dates should use YYYY-MM-DD format"
+        "Identifies technologies, audience, and related as optional (not required) fields",
+        "The answer distinguishes required fields from optional fields clearly, not just listing all fields as required"
       ]
     },
     {
       "id": 3,
-      "prompt": "Write a structured MADR with status 'superseded' for our old REST API decision that has been replaced by ADR-0012 which chose GraphQL.",
-      "expected_output": "A Structured MADR with superseded status, including supersession reference to ADR-0012 in both the Status section and the related frontmatter field.",
+      "prompt": "Write a structured MADR with status 'superseded' for our old REST API decision that has been replaced by ADR-0012 which chose GraphQL. Save the ADR to `adr.md`.",
+      "expected_output": "A Structured MADR saved to adr.md with superseded status, including supersession reference to ADR-0012 in both the Status section and the related frontmatter field.",
       "files": [],
+      "deterministic_checks": [
+        {
+          "type": "file_exists",
+          "file": "adr.md",
+          "description": "adr.md output file exists"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "status: superseded",
+          "description": "frontmatter status is 'superseded'"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "ADR-0012",
+          "description": "document references ADR-0012"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "type: adr",
+          "description": "frontmatter type is 'adr'"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "related:",
+          "description": "frontmatter has related field"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "## Audit",
+          "description": "Audit section is present"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "## Status",
+          "description": "Status section is present"
+        },
+        {
+          "type": "regex_match",
+          "file": "adr.md",
+          "pattern": "(?i)superseded by ADR-0012",
+          "description": "Status section body mentions supersession by ADR-0012"
+        }
+      ],
       "expectations": [
-        "Frontmatter status field is set to 'superseded'",
-        "Status section body mentions supersession by ADR-0012 (e.g., 'Superseded by ADR-0012')",
-        "Frontmatter related field includes a reference to adr_0012.md or ADR-0012",
-        "Related Decisions section contains a link to ADR-0012 with context about the GraphQL replacement",
-        "All required sections are still present including Audit section"
+        "The frontmatter related field includes adr_0012.md or a reference to ADR-0012 (not just mentioning it in body text)",
+        "The Related Decisions section (if present) links to ADR-0012 with context about the GraphQL replacement",
+        "All required frontmatter fields (title, description, type, category, tags, status, created, updated, author, project) are present"
       ]
     },
     {
       "id": 4,
-      "prompt": "How does structured MADR differ from standard MADR?",
-      "expected_output": "A clear comparison highlighting the key differences between standard MADR and Structured MADR.",
+      "prompt": "How does structured MADR differ from standard MADR? Write your answer to `comparison.md`.",
+      "expected_output": "A clear comparison highlighting the key differences between standard MADR and Structured MADR, saved to comparison.md.",
       "files": [],
+      "deterministic_checks": [
+        {
+          "type": "file_exists",
+          "file": "comparison.md",
+          "description": "comparison.md output file exists"
+        },
+        {
+          "type": "regex_match",
+          "file": "comparison.md",
+          "pattern": "(?i)frontmatter",
+          "description": "comparison mentions frontmatter, the defining SMADR difference"
+        },
+        {
+          "type": "regex_match",
+          "file": "comparison.md",
+          "pattern": "(?i)audit",
+          "description": "comparison mentions the required audit trail"
+        },
+        {
+          "type": "file_contains",
+          "file": "comparison.md",
+          "literal": "MADR",
+          "description": "comparison names the MADR format"
+        }
+      ],
       "expectations": [
         "Mentions that Structured MADR requires YAML frontmatter while standard MADR does not",
         "Explains that option analysis uses full narrative with risk assessment rather than simple pros/cons lists",
@@ -56,69 +322,286 @@
     },
     {
       "id": 5,
-      "prompt": "Write the audit section for ADR-0007 about using PostgreSQL. The audit found that connection pooling via pgBouncer is implemented in deploy/pgbouncer.yaml lines 1-45, but the required pg_stat_statements extension is not yet enabled, making it non-compliant.",
-      "expected_output": "A properly formatted audit section with a findings table showing one compliant and one non-compliant finding, overall status of Non-Compliant or Partial, and action required.",
+      "prompt": "Write the audit section for ADR-0007 about using PostgreSQL. The audit found that connection pooling via pgBouncer is implemented in deploy/pgbouncer.yaml lines 1-45, but the required pg_stat_statements extension is not yet enabled, making it non-compliant. Save your audit section to `audit.md`.",
+      "expected_output": "A properly formatted audit section saved to audit.md with a findings table showing one compliant and one non-compliant finding, overall status of Non-Compliant or Partial, and action required.",
       "files": [],
+      "deterministic_checks": [
+        {
+          "type": "file_exists",
+          "file": "audit.md",
+          "description": "audit.md output file exists"
+        },
+        {
+          "type": "regex_match",
+          "file": "audit.md",
+          "pattern": "(?m)^### \\d{4}-\\d{2}-\\d{2}",
+          "description": "Audit subsection has date-stamped header (### YYYY-MM-DD)"
+        },
+        {
+          "type": "regex_match",
+          "file": "audit.md",
+          "pattern": "(?i)(Non-Compliant|Partial)",
+          "description": "Overall status is Non-Compliant or Partial (not Compliant)"
+        },
+        {
+          "type": "file_contains",
+          "file": "audit.md",
+          "literal": "pgbouncer.yaml",
+          "description": "pgBouncer finding references deploy/pgbouncer.yaml"
+        },
+        {
+          "type": "file_contains",
+          "file": "audit.md",
+          "literal": "pg_stat_statements",
+          "description": "pg_stat_statements finding is present"
+        },
+        {
+          "type": "file_contains",
+          "file": "audit.md",
+          "literal": "Finding",
+          "description": "Findings table has Finding column header"
+        },
+        {
+          "type": "file_contains",
+          "file": "audit.md",
+          "literal": "compliant",
+          "description": "At least one finding is marked compliant"
+        },
+        {
+          "type": "file_contains",
+          "file": "audit.md",
+          "literal": "non-compliant",
+          "description": "At least one finding is marked non-compliant"
+        },
+        {
+          "type": "file_not_contains",
+          "file": "audit.md",
+          "literal": "Action Required:** None",
+          "description": "Action Required is not None since there is a non-compliant finding"
+        }
+      ],
       "expectations": [
-        "Audit section contains a date-stamped subsection header (### YYYY-MM-DD)",
-        "Overall Status is 'Non-Compliant' or 'Partial' (not 'Compliant' since pg_stat_statements is missing)",
-        "Findings table includes columns: Finding, Files, Lines, Assessment",
-        "pgBouncer finding is marked as 'compliant' with reference to deploy/pgbouncer.yaml and lines L1-L45",
-        "pg_stat_statements finding is marked as 'non-compliant'",
-        "Action Required section is present and not 'None' since there is a non-compliant finding"
+        "Findings table includes columns for Finding, Files, Lines, and Assessment",
+        "pgBouncer finding references lines L1-L45 of deploy/pgbouncer.yaml and is marked compliant",
+        "The Action Required section specifies enabling pg_stat_statements or equivalent remediation"
       ]
     },
     {
       "id": 6,
-      "prompt": "Create a structured MADR for choosing between Kubernetes and Docker Swarm for container orchestration. The decision is still proposed and hasn't been accepted yet. We're in the healthcare domain so compliance is critical.",
-      "expected_output": "A Structured MADR with proposed status, healthcare/compliance-oriented context, comprehensive analysis of both options with risk assessments emphasizing regulatory concerns, and a Pending audit section.",
+      "prompt": "Create a structured MADR for choosing between Kubernetes and Docker Swarm for container orchestration. The decision is still proposed and hasn't been accepted yet. We're in the healthcare domain so compliance is critical. Save the ADR to `adr.md`.",
+      "expected_output": "A Structured MADR saved to adr.md with proposed status, healthcare/compliance-oriented context, comprehensive analysis of both options with risk assessments emphasizing regulatory concerns, and a Pending audit section.",
       "files": [],
+      "deterministic_checks": [
+        {
+          "type": "file_exists",
+          "file": "adr.md",
+          "description": "adr.md output file exists"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "status: proposed",
+          "description": "frontmatter status is 'proposed'"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "type: adr",
+          "description": "frontmatter type is 'adr'"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "## Audit",
+          "description": "Audit section is present"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "Pending",
+          "description": "Audit status is Pending for a proposed decision"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "### Primary Decision Drivers",
+          "description": "Primary Decision Drivers subsection present"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "### Positive",
+          "description": "Consequences include Positive subsection"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "### Negative",
+          "description": "Consequences include Negative subsection"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "### Neutral",
+          "description": "Consequences include Neutral subsection"
+        }
+      ],
       "expectations": [
-        "Frontmatter status is 'proposed' (not accepted or any other value)",
-        "Frontmatter category relates to infrastructure or architecture",
-        "Context section references healthcare domain, compliance requirements, or regulatory concerns",
+        "Context section references healthcare domain, compliance requirements, or regulatory concerns such as HIPAA",
         "Both Kubernetes and Docker Swarm options include Risk Assessment sections with Technical, Schedule, and Ecosystem risk levels",
-        "Audit section is present with status 'Pending' since the decision is only proposed"
+        "The frontmatter category field relates to infrastructure or architecture (not ui or api)"
       ]
     },
     {
       "id": 7,
-      "prompt": "When should I use structured MADR instead of regular MADR or Nygard format?",
-      "expected_output": "Guidance on when Structured MADR is appropriate versus other formats, with specific use cases.",
+      "prompt": "When should I use structured MADR instead of regular MADR or Nygard format? Write your answer to `guidance.md`.",
+      "expected_output": "Guidance on when Structured MADR is appropriate versus other formats, with specific use cases, saved to guidance.md.",
       "files": [],
+      "deterministic_checks": [
+        {
+          "type": "file_exists",
+          "file": "guidance.md",
+          "description": "guidance.md output file exists"
+        },
+        {
+          "type": "file_contains",
+          "file": "guidance.md",
+          "literal": "Nygard",
+          "description": "guidance names the Nygard format"
+        },
+        {
+          "type": "file_contains",
+          "file": "guidance.md",
+          "literal": "MADR",
+          "description": "guidance names the MADR format"
+        },
+        {
+          "type": "regex_match",
+          "file": "guidance.md",
+          "pattern": "(?i)(regulat|complian|audit)",
+          "description": "guidance cites the compliance/regulated-industry use case"
+        }
+      ],
       "expectations": [
         "Recommends Structured MADR for projects requiring compliance auditing or regulated industries",
-        "Mentions that standard MADR is better for simpler tech decisions",
+        "Mentions that standard MADR is better for simpler tech decisions or teams preferring less overhead",
         "Mentions that Nygard format is suited for quick records or simple decisions",
-        "References that Structured MADR has 12+ sections compared to MADR's 10 and Nygard's 5",
+        "References that Structured MADR has more sections than MADR and Nygard (e.g. 12+ vs 10 vs 5)",
         "Mentions healthcare or finance as examples of regulated industries where Structured MADR fits"
       ]
     },
     {
       "id": 8,
-      "prompt": "I have an existing ADR in plain MADR format about using JWT for authentication. Convert it to structured MADR format. The original has: title 'Use JWT for Auth', status accepted, context about needing stateless auth, options were JWT and session cookies, decided JWT. Created 2025-06-15.",
-      "expected_output": "A complete Structured MADR conversion with all plain MADR content restructured into Structured MADR sections, new YAML frontmatter added, consequences split out, and audit section appended.",
+      "prompt": "I have an existing ADR in plain MADR format about using JWT for authentication. Convert it to structured MADR format. The original has: title 'Use JWT for Auth', status accepted, context about needing stateless auth, options were JWT and session cookies, decided JWT. Created 2025-06-15. Save the converted ADR to `adr.md`.",
+      "expected_output": "A complete Structured MADR conversion saved to adr.md with all plain MADR content restructured into Structured MADR sections, new YAML frontmatter added, consequences split out, and audit section appended.",
       "files": [],
+      "deterministic_checks": [
+        {
+          "type": "file_exists",
+          "file": "adr.md",
+          "description": "adr.md output file exists"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "type: adr",
+          "description": "frontmatter type is 'adr'"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "status: accepted",
+          "description": "frontmatter status is 'accepted'"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "created: 2025-06-15",
+          "description": "frontmatter preserves original created date 2025-06-15"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "updated:",
+          "description": "frontmatter has updated date"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "### Background and Problem Statement",
+          "description": "Context restructured to include Background and Problem Statement subsection"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "### Primary Decision Drivers",
+          "description": "Decision Drivers include Primary hierarchy"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "### Positive",
+          "description": "Consequences split to include Positive subsection"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "### Negative",
+          "description": "Consequences split to include Negative subsection"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "### Neutral",
+          "description": "Consequences split to include Neutral subsection"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "## Audit",
+          "description": "Audit section is appended"
+        },
+        {
+          "type": "file_contains",
+          "file": "adr.md",
+          "literal": "Pending",
+          "description": "Audit status is Pending for a format conversion"
+        }
+      ],
       "expectations": [
-        "YAML frontmatter is added with all required fields including title, description, type: adr, category, tags, status: accepted, created: 2025-06-15, updated date, author, and project",
-        "Context is restructured into 'Background and Problem Statement' and 'Current Limitations' subsections",
-        "Decision Drivers are organized into Primary and Secondary hierarchies",
         "JWT and session cookies options each have Description, Advantages, Disadvantages, and Risk Assessment subsections",
-        "Consequences section is split into Positive, Negative, and Neutral subsections",
-        "Audit section is appended with Pending status since this is a format conversion"
+        "The conversion does not lose any substantive content from the original (stateless auth context is preserved)",
+        "The frontmatter has all 10 required fields: title, description, type, category, tags, status, created, updated, author, project"
       ]
     },
     {
       "id": 9,
-      "prompt": "I have these Structured MADR records in docs/adr/. Search them and tell me which ACCEPTED ADRs concern the database, and what those ADRs relate to.\n\n0001-use-postgresql.md frontmatter: title 'Use PostgreSQL', category architecture, tags [database, persistence], status accepted, related [adr_0005.md].\n0005-event-sourcing.md frontmatter: title 'Adopt Event Sourcing', category architecture, tags [database, events], status proposed, related [adr_0001.md].\n0009-design-system.md frontmatter: title 'Adopt a Design System', category ui, tags [frontend, design], status accepted.",
-      "expected_output": "A frontmatter-first triage that filters by status accepted and a database tag/category, names ADR-0001 as the match, excludes the proposed ADR-0005 and the ui ADR-0009, then follows ADR-0001's related link to ADR-0005 and resolves adr_0005.md to the 0005-prefixed file by number.",
+      "prompt": "I have these Structured MADR records in docs/adr/. Search them and tell me which ACCEPTED ADRs concern the database, and what those ADRs relate to. Write your answer to `answer.md`.\n\n0001-use-postgresql.md frontmatter: title 'Use PostgreSQL', category architecture, tags [database, persistence], status accepted, related [adr_0005.md].\n0005-event-sourcing.md frontmatter: title 'Adopt Event Sourcing', category architecture, tags [database, events], status proposed, related [adr_0001.md].\n0009-design-system.md frontmatter: title 'Adopt a Design System', category ui, tags [frontend, design], status accepted.",
+      "expected_output": "A frontmatter-first triage saved to answer.md that filters by status accepted and a database tag/category, names ADR-0001 as the match, excludes the proposed ADR-0005 and the ui ADR-0009, then follows ADR-0001's related link to ADR-0005.",
       "files": [],
+      "deterministic_checks": [
+        {
+          "type": "file_exists",
+          "file": "answer.md",
+          "description": "answer.md output file exists"
+        },
+        {
+          "type": "regex_match",
+          "file": "answer.md",
+          "pattern": "(?i)adr.?0001",
+          "description": "answer references ADR 0001 (the accepted database ADR), any separator"
+        },
+        {
+          "type": "regex_match",
+          "file": "answer.md",
+          "pattern": "(?i)adr.?0005",
+          "description": "answer references ADR 0005 via the related link, any separator"
+        }
+      ],
       "expectations": [
-        "Identifies ADR-0001 as the accepted database ADR using frontmatter status and tags, without relying on body content",
-        "Excludes ADR-0009 because its category and tags are ui, not database",
-        "Excludes ADR-0005 from the accepted-database set because its status is proposed, not accepted",
-        "Follows ADR-0001's related entry to ADR-0005 (traverses the related decision graph)",
-        "Resolves the related entry adr_0005.md to the 0005-prefixed file by ADR number rather than exact filename"
+        "The answer uses frontmatter fields (status, tags, category) to filter, not body content \u2014 this should be apparent from the reasoning or methodology described",
+        "ADR-0005 is noted as related to ADR-0001 via the related link, with the caveat that it is proposed (not accepted) and therefore excluded from the accepted-database set",
+        "ADR-0009 is excluded because its category/tags indicate ui, not database \u2014 the answer should state this reasoning"
       ]
     }
   ]
