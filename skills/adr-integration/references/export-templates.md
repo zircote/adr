@@ -383,7 +383,7 @@ Templates and configurations for exporting ADRs to various formats.
         },
         "format": {
           "type": "string",
-          "enum": ["madr", "nygard", "y-statement", "alexandrian", "business-case", "tyree-akerman"],
+          "enum": ["madr", "structured-madr", "nygard", "y-statement", "alexandrian", "business-case", "tyree-akerman"],
           "description": "ADR template format used"
         },
         "file": {
@@ -401,6 +401,10 @@ Templates and configurations for exporting ADRs to various formats.
               "items": { "type": "string" }
             },
             "options": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "decision_drivers": {
               "type": "array",
               "items": { "type": "string" }
             }

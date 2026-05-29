@@ -10,7 +10,8 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6.0.2
+      # yamllint disable-line rule:line-length
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
 
       - name: Validate plugin.json
         run: |
@@ -28,15 +29,23 @@ jobs:
           for dir in skills commands agents templates schemas; do
             if [ -d "$dir" ]; then
               echo "  Found: $dir/"
+            else
+              echo "ERROR: required directory '$dir/' not found"
+              exit 1
             fi
           done
 
           echo "Checking skill structure..."
+          shopt -s nullglob
+          skill_count=0
           for skill in skills/*/SKILL.md; do
-            if [ -f "$skill" ]; then
-              echo "  Found: $skill"
-            fi
+            echo "  Found: $skill"
+            skill_count=$((skill_count + 1))
           done
+          if [ "$skill_count" -eq 0 ]; then
+            echo "ERROR: no skills/*/SKILL.md files found"
+            exit 1
+          fi
 
       - name: Validate JSON schemas
         run: |
@@ -44,3 +53,22 @@ jobs:
             echo "Checking: $schema"
             python3 -m json.tool "$schema" > /dev/null
           done
+
+  docs-freshness:
+    runs-on: ubuntu-latest
+    steps:
+      # yamllint disable-line rule:line-length
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+
+      # yamllint disable-line rule:line-length
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f  # v6.3.0
+        with:
+          node-version: '22'
+
+      - name: Install site dependencies
+        working-directory: site
+        run: npm ci
+
+      - name: Check generated docs are fresh
+        working-directory: site
+        run: npm run check:freshness

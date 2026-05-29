@@ -1,10 +1,4 @@
 ---
-allowed-tools:
-- Bash
-- Glob
-- Grep
-- Read
-- Write
 color: yellow
 description: 'Use this agent proactively to audit code changes against accepted Architectural
   Decision Records. This agent checks if implementation follows documented architectural

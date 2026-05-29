@@ -91,6 +91,19 @@
         "Risk Assessment table includes at least one risk specific to microservices migration (e.g., complexity, data migration, service boundaries)",
         "Output follows the business case template structure with numbered ADR title and Date field"
       ]
+    },
+    {
+      "id": 8,
+      "prompt": "Create a business case ADR for standardizing the entire company on a single data warehouse (Snowflake) across all teams. We need CTO and CFO approval, and the proposal must define a phased rollout with measurable success criteria.",
+      "expected_output": "A business case ADR for adopting Snowflake as the standard data warehouse, with a phased Implementation section (timeline, resources required, success metrics) and a Stakeholder Sign-off covering the CTO and CFO.",
+      "files": [],
+      "expectations": [
+        "Output contains an Implementation section with a phased Timeline, Resources Required, and Success Metrics subsections",
+        "Success Metrics are concrete and measurable (e.g., adoption rate, query-cost reduction, time-to-insight)",
+        "Stakeholder Sign-off table includes rows for the CTO and CFO",
+        "Output contains an Executive Summary describing the data warehouse standardization decision",
+        "Cost-Benefit Analysis weighs standardization and migration costs against cross-team efficiency gains"
+      ]
     }
   ]
 }

@@ -4,13 +4,13 @@
     {
       "id": 1,
       "prompt": "I want to set up a GitHub Actions workflow that validates ADR format on pull requests. Can you help?",
-      "expected_output": "A GitHub Actions workflow YAML configuration that triggers on PRs touching docs/adr/**, validates required sections (Status, Context, Decision), and uses actions/checkout@v4.",
+      "expected_output": "A GitHub Actions workflow YAML configuration that triggers on PRs touching docs/adr/**, validates required sections (Status, Context, Decision), and uses a pinned actions/checkout step.",
       "files": [],
       "expectations": [
         "Output contains a GitHub Actions YAML workflow with 'on: pull_request' trigger",
         "Workflow includes path filter for 'docs/adr/**'",
         "Validation checks for required ADR sections: Status, Context, and Decision",
-        "Uses actions/checkout@v4 step",
+        "Uses an actions/checkout step (any pinned version)",
         "Includes error reporting mechanism (e.g., '::error' annotations or exit codes)"
       ]
     },

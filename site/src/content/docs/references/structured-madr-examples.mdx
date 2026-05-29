@@ -279,13 +279,13 @@ Raw RRF scores are unintuitive and not user-friendly.
 We will use linear normalization based on maximum score in result set.
 
 ```rust
-fn normalize(results: &[SearchHit]) -> Vec<SearchResult> \{
+fn normalize(results: &[SearchHit]) -> Vec<SearchResult> {
     let max = results.iter().map(|r| r.score).fold(0.0, f32::max);
-    results.iter().map(|r| SearchResult \{
-        score: if max &gt; 0.0 \{ r.score / max \} else \{ 0.0 \},
+    results.iter().map(|r| SearchResult {
+        score: if max > 0.0 { r.score / max } else { 0.0 },
         raw_score: r.score,
-    \}).collect()
-\}
+    }).collect()
+}
 ```
 
 ## Consequences

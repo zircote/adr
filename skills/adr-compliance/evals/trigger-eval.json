@@ -1,6 +1,6 @@
 {
   "skill_name": "adr-compliance",
-  "triggers": {
+  "trigger_evals": {
     "should_trigger": [
       "How do I check ADR compliance in our codebase?",
       "Run an architecture compliance audit on our project",

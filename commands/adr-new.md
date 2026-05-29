@@ -34,7 +34,7 @@ Check for `.claude/adr.local.md`:
 - `adr_paths`: Where to create the ADR
 - `default_format`: Template format (madr, nygard, y-statement, etc.)
 - `numbering.pattern`: How to number (4digit, 3digit, date)
-- `madr_variant`: Which MADR variant (full, minimal, bare)
+- `madr_variant`: Which MADR variant (full, minimal, bare, bare-minimal)
 
 ## Numbering Logic
 

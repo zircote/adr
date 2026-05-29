@@ -27,7 +27,7 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Validate ADR Format
         run: |
@@ -61,6 +61,7 @@ jobs:
             NUM=$((10#$NUM))
             if [ $NUM -le $LAST_NUM ]; then
               echo "::error::ADR numbering issue: $file"
+              exit 1
             fi
             LAST_NUM=$NUM
           done
@@ -238,31 +239,26 @@ Valid status values: `proposed`, `accepted`, `deprecated`, `superseded`, `reject
 OUTPUT_FILE="${1:-adrs.json}"
 ADR_PATH="${ADR_PATH:-docs/adr}"
 
-echo '{' > "$OUTPUT_FILE"
-echo '  "metadata": {' >> "$OUTPUT_FILE"
-echo "    \"project\": \"$(basename $(pwd))\"," >> "$OUTPUT_FILE"
-echo "    \"exported\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"," >> "$OUTPUT_FILE"
-
-TOTAL=$(ls "$ADR_PATH"/[0-9]*.md 2>/dev/null | wc -l | tr -d ' ')
-echo "    \"total\": $TOTAL" >> "$OUTPUT_FILE"
-echo '  },' >> "$OUTPUT_FILE"
-echo '  "adrs": [' >> "$OUTPUT_FILE"
-
-FIRST=true
+# Build each ADR object with jq so titles/statuses are always escaped
+# correctly, then slurp the stream into the final document with metadata.
 for file in "$ADR_PATH"/[0-9]*.md; do
     [ -f "$file" ] || continue
-    [ "$FIRST" = true ] && FIRST=false || echo ',' >> "$OUTPUT_FILE"
 
     ID=$(basename "$file" | grep -oE '^[0-9]+')
-    TITLE=$(grep -m1 "^# " "$file" | sed 's/^# //')
-    STATUS=$(grep -A1 "^## Status" "$file" | tail -1 | tr -d '\n\r')
+    TITLE=$(grep -m1 "^# " "$file" | sed 's/^# //; s/^[0-9]*\. //')
+    STATUS=$(awk '/^## Status/{f=1; next} f && /^## /{exit} f && NF {print; exit}' "$file")
 
-    echo -n "    {\"id\": \"$ID\", \"title\": \"$TITLE\", \"status\": \"$STATUS\", \"file\": \"$file\"}" >> "$OUTPUT_FILE"
-done
-
-echo '' >> "$OUTPUT_FILE"
-echo '  ]' >> "$OUTPUT_FILE"
-echo '}' >> "$OUTPUT_FILE"
+    jq -n \
+      --arg id "$ID" \
+      --arg title "$TITLE" \
+      --arg status "$STATUS" \
+      --arg file "$file" \
+      '{id: $id, title: $title, status: $status, file: $file}'
+done | jq -s \
+  --arg project "$(basename "$(pwd)")" \
+  --arg exported "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+  '{metadata: {project: $project, exported: $exported, total: length}, adrs: .}' \
+  > "$OUTPUT_FILE"
 
 echo "JSON export complete: $OUTPUT_FILE"
 ```
@@ -431,7 +427,7 @@ for file in "$ADR_PATH"/[0-9]*.md; do
     BASENAME=$(basename "$file")
     ID=$(echo "$BASENAME" | grep -oE '^[0-9]+')
     TITLE=$(grep -m1 "^# " "$file" | sed 's/^# //' | sed 's/^[0-9]*\. //')
-    STATUS=$(grep -A1 "^## Status" "$file" | tail -1 | head -1 | tr -d '\n\r')
+    STATUS=$(awk '/^## Status/{f=1; next} f && /^## /{exit} f && NF {print; exit}' "$file")
 
     echo "| $ID | [$TITLE](./$BASENAME) | $STATUS |" >> "$INDEX_FILE"
 done

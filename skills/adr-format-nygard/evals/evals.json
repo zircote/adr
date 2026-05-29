@@ -4,7 +4,7 @@
     {
       "id": 1,
       "prompt": "Create an ADR using the Nygard format for our decision to use PostgreSQL instead of MongoDB for our user data store.",
-      "expected_output": "A complete ADR in Nygard format with all five sections: numbered title, date, status, context, decision, and consequences. The context should be value-neutral, the decision should clearly state PostgreSQL was chosen, and consequences should include both positive and negative outcomes.",
+      "expected_output": "A complete ADR in Nygard format with all five sections: numbered title, status, context, decision, and consequences. The context should be value-neutral, the decision should clearly state PostgreSQL was chosen, and consequences should include both positive and negative outcomes.",
       "files": [],
       "expectations": [
         "Output contains a title formatted as '# {NUMBER}. {TITLE}' with a descriptive title about the database choice",
@@ -22,7 +22,7 @@
       "files": [],
       "expectations": [
         "Response attributes the format to Michael Nygard",
-        "Response identifies all five sections: Title, Date, Status, Context, Decision, Consequences",
+        "Response identifies all five sections: Title, Status, Context, Decision, Consequences",
         "Response describes the Context section as requiring value-neutral language",
         "Response mentions when the Nygard format is best suited (simple decisions, quick documentation) and when to consider alternatives (complex trade-offs, multiple options)",
         "Response does not invent additional sections beyond the five defined in the Nygard format"

@@ -5,7 +5,7 @@ allowed-tools:
 - Grep
 - Bash
 - Write
-argument-hint: '[--status=accepted|proposed|deprecated|superseded]'
+argument-hint: '[--status=accepted|proposed|deprecated|superseded|rejected]'
 description: List all ADRs with optional status filtering
 name: adr-list
 ---

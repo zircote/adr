@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/zircote/marketplace/adr-export.schema.json",
+  "$id": "https://github.com/zircote/adr/adr-export.schema.json",
   "title": "ADR Export",
   "description": "Schema for exported Architecture Decision Records",
   "type": "object",

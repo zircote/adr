@@ -1,10 +1,4 @@
 ---
-allowed-tools:
-- Bash
-- Glob
-- Grep
-- Read
-- Write
 color: green
 description: 'Use this agent when researching context, options, or best practices
   for an architectural decision. This agent analyzes the codebase and searches the

@@ -1,10 +1,4 @@
 ---
-allowed-tools:
-- Bash
-- Glob
-- Grep
-- Read
-- Write
 color: cyan
 description: 'Use this agent proactively when architectural decisions are being discussed
   in conversation. This agent detects keywords and patterns indicating architectural

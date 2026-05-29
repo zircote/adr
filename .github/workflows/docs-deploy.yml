@@ -16,8 +16,6 @@ name: Deploy Documentation
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: "pages"
@@ -27,11 +25,14 @@ jobs:
   build-docs:
     name: Build Documentation
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
 
     steps:
       - name: Checkout code
         # yamllint disable-line rule:line-length
-        uses: actions/checkout@0c366fd6a839edf440554fa01a7085ccba70ac98  # v4.3.1
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
 
       - name: Setup Node.js
         # yamllint disable-line rule:line-length
@@ -41,15 +42,15 @@ jobs:
 
       - name: Install site dependencies
         working-directory: site
-        run: npm ci || npm install
-
-      - name: Generate content
-        working-directory: site
-        run: npm run generate
+        run: npm ci
 
       - name: Check freshness
         working-directory: site
         run: npm run check:freshness
+
+      - name: Generate content
+        working-directory: site
+        run: npm run generate
 
       - name: Build Astro site
         working-directory: site
@@ -67,6 +68,9 @@ jobs:
 
   deploy:
     name: Deploy to GitHub Pages
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

@@ -101,12 +101,18 @@ function rewriteLinks(content, linkMap, sourceFile) {
       return `[${text}](${linkMap[resolved]}${suffix})`;
     }
 
-    // Filename fallback
+    // Filename fallback: only rewrite when exactly one mapping unambiguously
+    // matches the basename. Bailing on 0 or >1 matches avoids both the
+    // empty-filename (trailing slash) case matching everything and basename
+    // collisions (e.g. every skill's SKILL.md) resolving to the wrong page.
     const filename = pathPart.split("/").pop();
-    for (const [key, url] of Object.entries(linkMap)) {
-      if (key.endsWith(filename)) {
+    if (filename) {
+      const matches = Object.entries(linkMap).filter(
+        ([key]) => key === filename || key.endsWith(`/${filename}`),
+      );
+      if (matches.length === 1) {
         const suffix = anchor ? `#${anchor}` : "";
-        return `[${text}](${url}${suffix})`;
+        return `[${text}](${matches[0][1]}${suffix})`;
       }
     }
 
@@ -119,16 +125,31 @@ function rewriteLinks(content, linkMap, sourceFile) {
  */
 function escapeMdx(content) {
   const lines = content.split("\n");
-  let inCodeBlock = false;
+  let fence = null; // { char, len } while inside a fenced code block
   const result = [];
 
   for (const line of lines) {
-    if (line.trimStart().startsWith("```")) {
-      inCodeBlock = !inCodeBlock;
+    const fenceMatch = line.trimStart().match(/^(`{3,}|~{3,})(.*)$/);
+    if (fenceMatch) {
+      const marker = fenceMatch[1];
+      const info = fenceMatch[2].trim();
+      if (fence === null) {
+        // Opening fence — an info string (e.g. ```rust) is allowed here.
+        fence = { char: marker[0], len: marker.length };
+      } else if (
+        marker[0] === fence.char &&
+        marker.length >= fence.len &&
+        info === ""
+      ) {
+        // A closing fence must use the same char, be at least as long, and
+        // carry no info string. This keeps nested ```lang fences inside an
+        // outer ```markdown block from prematurely ending it.
+        fence = null;
+      }
       result.push(line);
       continue;
     }
-    if (inCodeBlock) {
+    if (fence !== null) {
       result.push(line);
       continue;
     }
@@ -218,7 +239,7 @@ export function generateSkillsPages(outputBase) {
 
     // Strip H1 if present
     let content = body;
-    const h1Match = content.match(/^#\s+.+\n+/);
+    const h1Match = content.match(/^\s*#\s+.+\n+/);
     if (h1Match) {
       content = content.slice(h1Match[0].length);
     }
